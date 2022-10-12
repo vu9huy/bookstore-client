@@ -1,0 +1,102 @@
+.profile {
+    .profile-input {
+        display: flex;
+        flex-direction: column;
+
+        .form-control {
+            // width: 100%;
+        }
+
+        .form-control:focus {
+            border: 2px solid #de2454;
+        }
+
+        .form-control:hover {
+            border: 2px solid #de2454;
+        }
+    }
+
+    .profile-username {
+        width: 240px;
+
+        input {
+            color: rgb(168, 162, 162);
+        }
+    }
+
+    .profile-email {
+        width: 400px;
+
+    }
+
+    .profile-avatar {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        .profile-avatar-wrapper {
+
+            .profile-avatar-image {
+
+                width: 100px;
+                height: 100px;
+                display: flex;
+                background-size: cover;
+                border: 4px solid #de2454;
+                border-radius: 1000px;
+            }
+        }
+    }
+
+    .profile-phone {
+        input {
+            width: 240px;
+        }
+    }
+
+    .profile-gender {
+        .radio-input {
+            input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+
+                +.radio-label {
+                    &:after {
+                        content: '';
+                        // background: #de2454;
+                        // border-radius: 100%;
+                        // border: 1px solid darken(#de2454, 25%);
+                        // display: inline-block;
+                        // width: 1.4em;
+                        // height: 1.4em;
+                        position: relative;
+                        top: -0.2em;
+                        margin-right: 1em;
+                        vertical-align: top;
+                        cursor: pointer;
+                        text-align: center;
+                        transition: all 250ms ease;
+                    }
+                }
+
+                &:checked {
+                    +.radio-label {
+                        &:before {
+                            background-color: #de2454;
+                            box-shadow: inset 0 0 0 4px #fff;
+                        }
+                    }
+                }
+
+                &:focus {
+                    +.radio-label {
+                        &:before {
+                            outline: none;
+                            border-color: #de2454;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@import '../../../scss/variable';
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 260px;
+    top: calc(100% + 4px);
+    border-radius: 6px;
+    border-width: 1px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+
+    .menu-display-profile {
+        width: 100%;
+
+        .menu-display {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 14px;
+            padding: 8px;
+            margin: 8px;
+            border-radius: 4px;
+
+            .menu-display-avatar {
+                width: 46px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    border-radius: 6px;
+                }
+            }
+
+            .menu-display-name {
+                .menu-display-username {
+                    font-weight: 600;
+                }
+
+                .menu-display-email {
+                    font-size: 14px;
+                    color: $light-sub-text-color;
+                }
+            }
+        }
+
+        .menu-display:hover {
+            background-color: $background-color-hover;
+            color: red;
+            cursor: pointer;
+        }
+    }
+
+
+    .menu-action {
+        line-height: 1.5;
+        width: 100%;
+
+        .menu-action-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            border-radius: 4px;
+            margin: 8px;
+            padding: 8px;
+
+            .action-icon {
+                i {
+                    color: $icon-color;
+                    font-size: 24px;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .menu-action-item:hover {
+            background-color: $background-color-hover;
+            color: red;
+            cursor: pointer;
+        }
+
+    }
+
+}

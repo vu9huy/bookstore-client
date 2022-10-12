@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "MeriendaB";
+    src: local("Merienda"),
+        url("../src/assets/fonts/Merienda/Merienda-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "MeriendaR";
+    src: local("Merienda"),
+        url("../src/assets/fonts/Merienda/Merienda-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "TitanOne";
+    src: local("TitanOne"),
+        url("../src/assets/fonts/Merienda/TitanOne-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "NotoSans-Medium";
+    src: local("TitanOne"),
+        url("../src/assets/fonts/noto sans/NotoSans-Medium.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "NotoSans-ExtraBold";
+    src: local("TitanOne"),
+        url("../src/assets/fonts/noto sans/NotoSans-ExtraBold.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "NotoSans-Bold";
+    src: local("TitanOne"),
+        url("../src/assets/fonts/noto sans/NotoSans-Bold.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "NotoSans-Light";
+    src: local("TitanOne"),
+        url("../src/assets/fonts/noto sans/NotoSans-Light.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "NotoSans-Regular";
+    src: local("TitanOne"),
+        url("../src/assets/fonts/noto sans/NotoSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+    background-color: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #cbd5e0;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #a0aec0;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

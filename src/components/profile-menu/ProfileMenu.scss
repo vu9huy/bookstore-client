@@ -1,0 +1,34 @@
+@import '../../scss/variable';
+
+.profile-menu {
+    width: fit-content;
+    position: relative;
+
+    .profile-menu-avatar {
+        width: 50px;
+        cursor: pointer;
+
+        img {
+            // padding: 2px;
+            // border: 2px solid $primary-color;
+            border-radius: 100%;
+        }
+    }
+
+    .profile-menu-menu {
+        position: absolute;
+        right: 0;
+        transition: all .25s linear;
+        transform: scaleY(0);
+        transform-origin: top;
+        z-index: 100;
+        background-color: #fff;
+
+    }
+
+    .active {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+}

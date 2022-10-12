@@ -1,0 +1,52 @@
+@import '../../scss/variable';
+
+.noti {
+    width: fit-content;
+    position: relative;
+
+    .noti-icon {
+        position: relative;
+        cursor: pointer;
+
+        .noti-icon-bot {
+            i {
+                font-size: 26px;
+                color: $icon-color;
+            }
+        }
+
+        .noti-icon-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            left: 60%;
+            bottom: 60%;
+            color: #fff;
+            background-color: $primary-color;
+            padding: 3px;
+            line-height: 1;
+            border-radius: 100%;
+        }
+    }
+
+    .noti-display-wrapper {
+        position: absolute;
+        right: 0;
+        transition: all .2s linear;
+        transform: scaleY(0);
+        transform-origin: top;
+        z-index: 100;
+        background-color: #fff;
+
+    }
+
+    .active {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+}

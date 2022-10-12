@@ -1,0 +1,32 @@
+@import '../../scss/variable';
+
+.sign {
+    .signin {
+        margin: 0 12px;
+        padding: 6px 12px;
+        border: 2px solid $primary-color;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .signin:hover {
+        background-color: $primary-hover-color;
+        color: #fff;
+        box-shadow: 0px 0px 1px 1px #e61c4e;
+        transition: all 0.5s ease;
+    }
+
+    .signup {
+        padding: 8px 14px;
+        border-radius: 6px;
+        background-color: $primary-color;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .signup:hover {
+        background-color: $primary-hover-color;
+        transition: all 0.3s ease;
+        box-shadow: 0px 0px 1px 1px #e61c4e;
+    }
+}

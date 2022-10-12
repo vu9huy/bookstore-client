@@ -1,0 +1,22 @@
+@import '../../scss/variable';
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px 0 0;
+
+    .logo-image {
+        width: 60px;
+
+        img {}
+    }
+
+    .logo-text {
+        font-family: MeriendaB;
+        font-size: 28px;
+        color: $primary-color
+    }
+}

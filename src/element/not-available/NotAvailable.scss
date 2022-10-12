@@ -1,0 +1,19 @@
+.not-availabel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    i {
+        color: #de2454;
+        font-size: 20px;
+        padding-right: 3px;
+        line-height: 1;
+    }
+
+    span {
+        color: #de2454;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+    }
+}

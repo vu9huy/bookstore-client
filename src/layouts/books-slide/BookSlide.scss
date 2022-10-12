@@ -1,0 +1,126 @@
+@import '../../scss/variable';
+
+.book-slide {
+    // padding: 0 20px 32px;
+    width: 75%;
+    margin: 0 auto 46px;
+
+    .book-slide-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .book-slide-header-name {
+            font-size: 32px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        // .book-slide-header-button {
+        //     background-color: $primary-color;
+        //     border-width: 1px;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     padding: 6px 24px;
+        //     border-radius: 1000px;
+
+        //     span {
+        //         color: #fff;
+        //     }
+        // }
+
+        // .book-slide-header-button:hover {
+        //     background-color: #bf1f49;
+        //     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
+        //     transform: scale(1.02);
+        // }
+    }
+
+    .view-all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        position: relative;
+        // box-shadow: 0px 6px 12px rgb(0 0 0 / 30%);
+        // transition: transform 200ms ease-in, box-shadow 200ms ease-in;
+        margin-bottom: 28px;
+        margin-top: 28px;
+        height: 320px;
+        text-align: center;
+        background-color: $primary-color;
+        font-weight: 700;
+
+        span {
+            color: #fff;
+            width: 100px;
+        }
+    }
+
+    .swiper-button-prev {
+        color: $primary-color;
+        font-weight: 800;
+    }
+
+    .swiper-button-next {
+        color: $primary-color;
+        font-weight: 800;
+    }
+}
+
+.book-table {
+    width: 75%;
+    margin: 0 auto 60px;
+
+
+    .book-table-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .book-table-header-name {
+            font-size: 32px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        // .book-table-header-button {
+        //     background-color: $primary-color;
+        //     border-width: 1px;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     padding: 6px 24px;
+        //     border-radius: 1000px;
+
+        //     span {
+        //         color: #fff;
+        //     }
+        // }
+
+        // .book-table-header-button:hover {
+        //     background-color: #bf1f49;
+        //     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
+        //     transform: scale(1.02);
+        // }
+    }
+
+    .book-table-body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .book-table-body-item {
+            width: 380px;
+
+        }
+    }
+}

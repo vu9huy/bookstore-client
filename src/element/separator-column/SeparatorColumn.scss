@@ -1,0 +1,13 @@
+.separator-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1px;
+
+    div {
+        display: block;
+        height: 60%;
+        width: 1px;
+        background-color: rgba(150, 150, 150, .6);
+    }
+}

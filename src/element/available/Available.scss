@@ -1,0 +1,19 @@
+.availabel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    i {
+        color: #1fa5a3;
+        font-size: 20px;
+        padding-right: 3px;
+        line-height: 1;
+    }
+
+    span {
+        color: #1fa5a3;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+    }
+}

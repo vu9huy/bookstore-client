@@ -1,0 +1,30 @@
+@import '../../scss/variable';
+
+.cart {
+    position: relative;
+    cursor: pointer;
+
+    .cart-icon {
+        i {
+            font-size: 26px;
+            color: $icon-color;
+        }
+    }
+
+    .cart-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        font-size: 12px;
+        width: 20px;
+        height: 20px;
+        left: 65%;
+        bottom: 65%;
+        color: #fff;
+        background-color: $primary-color;
+        padding: 3px;
+        line-height: 1;
+        border-radius: 100%;
+    }
+}

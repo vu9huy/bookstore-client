@@ -1,0 +1,79 @@
+@import '../../scss/variable';
+
+.book-item-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    // background-color: #ccc;
+    padding: 16px 16px 16px 0;
+
+    .book-item-2-left {
+        height: 200px;
+        min-width: 150px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            position: relative;
+            box-shadow: 0px 6px 12px rgb(0 0 0 / 30%);
+            transition: transform 200ms ease-in, box-shadow 200ms ease-in;
+            border-radius: 5px;
+        }
+
+        img:hover {
+            box-shadow: 0px 11px 18px rgb(0 0 0 / 30%);
+            transform: scale(1.025);
+        }
+
+        img::after {
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.0666667) 4%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(0, 0, 0, 0.0666667) 96%, rgba(0, 0, 0, 0.2) 100%);
+            content: '';
+            border-radius: 3px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: 20;
+        }
+    }
+
+    .book-item-2-right {
+        // padding-top: 6px;
+
+        .book-item-2-book-name {
+            font-size: 20px;
+            font-weight: 600;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .book-item-2-author {
+            font-size: 14px;
+        }
+
+        .book-item-2-price {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding-top: 18px;
+
+            .book-item-2-price-sale {
+                font-weight: 700;
+                color: $primary-color;
+            }
+
+            .book-item-2-price-default {
+                font-weight: 700;
+                text-decoration: line-through;
+            }
+        }
+    }
+}

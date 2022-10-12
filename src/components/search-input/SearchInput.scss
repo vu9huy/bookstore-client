@@ -1,0 +1,78 @@
+@import '../../scss/variable';
+
+.search-input {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    input {
+        // padding: 8px 4px;
+        border-width: 0;
+        width: 0;
+        height: 40px;
+        transition: all 0.5s ease;
+        font-size: 16px;
+        padding-left: 8px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        background-color: $primary-color;
+        cursor: text;
+        caret-color: $primary-color;
+        color: #000;
+    }
+
+    input:focus {
+        width: 200px;
+        background-color: #fff;
+        box-shadow: 0px 0px 1px 1px $primary-color;
+
+    }
+
+    input:focus~div {
+        padding-left: 8px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        box-shadow: 0px 0px 1px 1px $primary-color;
+
+    }
+
+    input::placeholder {
+        color: rgb(155, 164, 182);
+    }
+
+    .icon {
+        display: flex;
+        flex-direction: row;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        line-height: 1;
+        padding: 9px 7px 8px 0;
+        height: 40px;
+        background-color: $primary-color;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        i {
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+}
+
+.search-input:hover {
+    input {
+        width: 200px;
+        height: 39px;
+        background-color: #fff;
+        box-shadow: 0px 0px 1px 1px $primary-hover-color;
+    }
+
+    .icon {
+        padding-left: 8px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        box-shadow: 0px 0px 1px 1px $primary-color;
+
+    }
+}
