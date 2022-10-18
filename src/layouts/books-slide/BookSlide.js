@@ -23,10 +23,12 @@ import BookItem3 from '../../components/book-item-3/BookItem3';
 const BookSlide = ({ display }) => {
     const listBookIds = display.listBook;
     // console.log('listBookIds', listBookIds);
-    const { isLoading, data, error } = useQuery([`listbookids-${display.displayId}`], async () => await getBooksByListIdsIdApi(listBookIds), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery([`listbookids-${display.displayId}`], async () =>
+        await getBooksByListIdsIdApi(listBookIds), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     // console.log('data', data);
     const result = data?.data?.data
     const listBook = result || [];
+    // console.log('data bên home', data);
     let listBookDisplay;
     if (result) {
         if (display.displayType === 'slide') {
@@ -38,43 +40,11 @@ const BookSlide = ({ display }) => {
         listBookDisplay = [1, 2, 3, 4, 5, 6];
     }
 
-    // useEffect(async () => {
-    //     try {
-    //         // const response = await getAllBookApi(15, 35);
-    //         setisLoading(isLoading)
-    //         console.log('isLoading', isLoading);
-    //         console.log('data', data);
-    //         console.log('data', error);
-    //         const result = data?.data?.data
-    //         if (result) {
-    //             setListBook(result);
-    //         } else {
-    //             setListBook([]);
-    //         }
-    //         let bookDisplay
-
-    //         if (bookSlideType === 'slide') {
-    //             bookDisplay = result?.slice(0, 15)
-    //         } else if (bookSlideType === 'table') {
-    //             bookDisplay = result?.slice(0, 6)
-    //         }
-    //         if (bookDisplay) {
-    //             setListBookDisplay(bookDisplay);
-    //         } else {
-    //             setListBookDisplay([1, 1, 1, 1, 1, 1]);
-    //         }
-    //         // console.log(response);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }, []);
-
-
     if (display.displayType === 'slide') {
         return (
             <div className='book-slide'>
                 <div className='book-slide-header'>
-                    <Link to={`/${display.displayId}`} className='book-slide-header-name'>
+                    <Link to={`/list/${display.displayId}`} className='book-slide-header-name'>
                         {isLoading ? <Skeleton width={300} height={32} /> : display.name}
                     </Link>
                     {isLoading && (
@@ -82,10 +52,12 @@ const BookSlide = ({ display }) => {
                             width={250} height={32}
                         />
                     )}
-                    <Button content={<Link to={`/${display.displayId}`} >
-                        <span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>
-                    </Link>} style={{ display: isLoading ? 'none' : undefined }}>
-                    </Button>
+
+                    <Link to={`/list/${display.displayId}`} >
+                        <Button style={{ display: isLoading ? 'none' : undefined }}
+                            content={<span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>} ></Button>
+                    </Link>
+
                 </div>
                 {isLoading && (
                     <Skeleton
@@ -115,7 +87,7 @@ const BookSlide = ({ display }) => {
                             )
                         })}
                         <SwiperSlide key={listBookDisplay.length + 1}>
-                            <Link to={`/${display.displayId}`} className='view-all'>
+                            <Link to={`/list/${display.displayId}`} className='view-all'>
                                 <span>{`VIEW ALL ${listBook.length} BOOKS`}</span>
                             </Link>
                         </SwiperSlide>
@@ -128,7 +100,7 @@ const BookSlide = ({ display }) => {
         return (
             <div className='book-table'>
                 <div className='book-table-header'>
-                    <Link to={`/${display.displayId}`} className='book-table-header-name'>
+                    <Link to={`/list/${display.displayId}`} className='book-table-header-name'>
                         {isLoading ? <Skeleton width={300} height={32} /> : display.name}
                     </Link>
                     {isLoading && (
@@ -137,12 +109,10 @@ const BookSlide = ({ display }) => {
                         />
                     )}
 
-                    <Button
-                        content={<Link to={`/${display.displayId}`} >
-                            <span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>
-                        </Link>}
-                        style={{ display: isLoading ? 'none' : undefined }}>
-                    </Button>
+                    <Link to={`/list/${display.displayId}`} >
+                        <Button style={{ display: isLoading ? 'none' : undefined }}
+                            content={<span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>} ></Button>
+                    </Link>
                 </div>
                 <div className='book-table-body'>
                     {listBookDisplay?.map((book, index) => {

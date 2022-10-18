@@ -9,11 +9,11 @@ const RandomDisplay = () => {
         const response = await getAllDisplayApi();
         const displayList = response.data?.data || [];
 
-        function get_random(list) {
+        function getRandom(list) {
             return list[Math.floor((Math.random() * list.length))];
         }
 
-        const displayRandom = get_random(displayList);
+        const displayRandom = getRandom(displayList);
         setDisplay(displayRandom)
         // console.log(displayRandom);
     }, []);

@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../../../utils/api/CallApi';
 import { userDataContext } from '../../../context/userDataContext';
 
-const Menu = ({ avatarUrl, username, email, onClickOutside, avatarRef }) => {
+const Menu = ({ onClickOutside, avatarRef }) => {
     const navigate = useNavigate();
     const refMenu = useRef(null);
 
@@ -33,17 +33,17 @@ const Menu = ({ avatarUrl, username, email, onClickOutside, avatarRef }) => {
     return (
         <div className='menu' ref={refMenu}>
             <div className='menu-display-profile'>
-                <Link to={`/users/${username}`} className='menu-display' >
+                <Link to={`/users/${userContext.userData.username}`} className='menu-display' >
                     <div className='menu-display-avatar'>
-                        <img src={avatarUrl} />
+                        <div className='profile-avatar-image' style={{ backgroundImage: "url(" + userContext.userData.avatarUrl + ")", }} />
                     </div>
-
                     <div className='menu-display-name'>
                         <div className='menu-display-username'>
-                            {username}
+                            {userContext.userData.username}
                         </div>
                         <div className='menu-display-email'>
-                            {email}
+
+                            {userContext.userData.email}
                         </div>
                     </div>
                 </Link>

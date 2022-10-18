@@ -1,0 +1,31 @@
+.list-books-theme-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .list-books-theme-wrapper {
+        max-width: 1024px;
+
+        .list-books-theme-title-wrapper {
+            margin: 56px 0 8px 0;
+
+            .list-books-theme-title {
+                font-size: 28px;
+            }
+        }
+
+        .list-books-theme {
+            display: grid;
+            column-gap: 16px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-auto-flow: row;
+
+            .list-books-theme-item {
+                // grid-template-columns: minmax(0, 1fr);
+                // grid-template-rows: auto auto auto 1fr auto auto;
+                // width: fit-content;
+            }
+        }
+    }
+}

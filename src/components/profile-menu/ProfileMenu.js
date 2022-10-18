@@ -21,11 +21,11 @@ const ProfileMenu = () => {
     return (
         <div className='profile-menu'>
             <div className='profile-menu-avatar' ref={avatarRef} onClick={() => { setIsDisplayMenu(!isDisplayMenu) }} >
-                <img src={user.avatarUrl} />
+                <div className='profile-avatar-image' style={{ backgroundImage: "url(" + userContext.userData.avatarUrl + ")", }} />
             </div>
             {/* {!isDisplayMenu || */}
             <div className={isDisplayMenu ? 'profile-menu-menu active' : 'profile-menu-menu hidden'}>
-                <Menu username={user.username} email={user.email} avatarUrl={user.avatarUrl} avatarRef={avatarRef} onClickOutside={() => { setIsDisplayMenu(false) }} />
+                <Menu avatarRef={avatarRef} onClickOutside={() => { setIsDisplayMenu(false) }} />
             </div>
             {/* } */}
         </div>

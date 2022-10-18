@@ -20,16 +20,19 @@ const BookSearch = ({ searchKey, skip, limit, page, queryObj }) => {
     // console.log('result', result);
 
     return (
-        <div className="book-search" >
-            {listBook.length == 0 && <div className=''>No results match that query</div>}
-            {listBook?.map((book, index) => {
-                return (
-                    <div className='book-search-item' key={index}>
-                        <BookItem3 isLoading={isLoading} bookId={book.id} imageUrl={book.imageUrl} bookName={book.bookName} author={book.author} salePrice={Math.round(book.price * 85 / 100 * 100) / 100} defaultPrice={book.price} />
-                    </div>
-                )
-            })}
+        <div className='book-search-wrapper'>
+            {listBook.length == 0 && <div className='book-search-no-match'>No results match that query</div>}
+            <div className="book-search" >
+                {listBook?.map((book, index) => {
+                    return (
+                        <div className='book-search-item' key={index}>
+                            <BookItem3 isAddButton={false} isLoading={isLoading} bookId={book.id} imageUrl={book.imageUrl} bookName={book.bookName} author={book.author} salePrice={Math.round(book.price * 85 / 100 * 100) / 100} defaultPrice={book.price} />
+                        </div>
+                    )
+                })}
+            </div>
         </div>
+
     )
 }
 

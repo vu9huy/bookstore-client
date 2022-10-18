@@ -1,6 +1,9 @@
 
 import { Link } from 'react-router-dom';
 import './Cart.scss';
+// Import Skeleton 
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const Cart = ({ numberCart }) => {
 
@@ -10,9 +13,11 @@ const Cart = ({ numberCart }) => {
             <div className='cart-icon'>
                 <i className='bx bx-cart-alt'></i>
             </div>
-            <div className='cart-number'>
+            {numberCart ? <div className='cart-number'>
                 {numberCart < 99 ? numberCart : '99+'}
-            </div>
+            </div> :
+                <div className='cart-number'></div>
+            }
         </Link>
     )
 }

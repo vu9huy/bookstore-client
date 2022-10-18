@@ -211,6 +211,7 @@ const getBookByIdApi = async (id) => {
 
 // GET BOOKS BY LIST ID
 const getBooksByListIdsIdApi = async (listId) => {
+    // console.log('hàm getbooksbylistIds', listId);
     try {
         const response = await AxiosApiInstance.post(`${apiUrl}/books/listid`, listId);
         return response

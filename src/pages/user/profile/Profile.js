@@ -3,12 +3,17 @@ import Header from '../../../layouts/header/Header';
 import Upload from '../../../utils/upload-image/Upload';
 import handleUploadImages from '../../../utils/upload-image/Upload-func';
 import './Profile.scss';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from "date-fns";
 import Button from '../../../element/button/Button';
 import { editUserDataApi, getUserDataApi } from '../../../utils/api/CallApi';
+import { userDataContext } from '../../../context/userDataContext';
+const USERNAME = process.env.REACT_APP_LOCALSTORAGE_USERNAME;
+const EMAIL = process.env.REACT_APP_LOCALSTORAGE_EMAIL;
+const AVATAR_URL = process.env.REACT_APP_LOCALSTORAGE_AVATAR_URL;
+const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 
 const Profile = () => {
 
@@ -17,6 +22,7 @@ const Profile = () => {
     const [listUrlImage, setListUrlImage] = useState([]);
     const [userData, setUserData] = useState({});
     const childFunc = useRef(null);
+    const userContext = useContext(userDataContext);
 
     useEffect(async () => {
         const response = await getUserDataApi();
@@ -75,9 +81,33 @@ const Profile = () => {
         delete userDataObj.zipCode;
         delete userDataObj.detailAddress;
 
-        // console.log('userDataObj', userDataObj);
-        const result = await editUserDataApi(userDataObj);
-        // console.log('result', result);
+        // call api edit user
+        await editUserDataApi(userDataObj);
+
+        // get user data after edit
+        const userDataResponse = await getUserDataApi();
+        const userDataNew = userDataResponse.data?.data;
+        const { email, avatarUrl } = userDataNew;
+
+        // check user data save on local or session
+        const isLocal = localStorage.getItem(USERNAME);
+        const isSession = sessionStorage.getItem(USERNAME);
+
+        // save new user data
+        if (isLocal) {
+            localStorage.setItem(EMAIL, email);
+            localStorage.setItem(AVATAR_URL, avatarUrl);
+        } else if (isSession) {
+            sessionStorage.setItem(EMAIL, email);
+            sessionStorage.setItem(AVATAR_URL, avatarUrl);
+        }
+
+        // const emailNew = localStorage.getItem(EMAIL) || sessionStorage.getItem(EMAIL) || '';
+        // const avatarUrlNew = localStorage.getItem(AVATAR_URL) || sessionStorage.getItem(AVATAR_URL) || '';
+
+
+        userContext.changeUserData({ ...userContext.userData, email, avatarUrl })
+        console.log('userContext', userContext);
 
     }
 

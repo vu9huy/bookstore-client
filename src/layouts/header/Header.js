@@ -15,30 +15,46 @@ const USERNAME = process.env.REACT_APP_LOCALSTORAGE_USERNAME;
 const EMAIL = process.env.REACT_APP_LOCALSTORAGE_EMAIL;
 const AVATAR_URL = process.env.REACT_APP_LOCALSTORAGE_AVATAR_URL;
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
+// Import React Query 
+import { useQuery, } from '@tanstack/react-query';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
-
-const Header = () => {
+const Header = ({ reRender }) => {
     const userContext = useContext(userDataContext);
 
-    const username = localStorage.getItem(USERNAME) || sessionStorage.getItem(USERNAME) || '';
-    const email = localStorage.getItem(EMAIL) || sessionStorage.getItem(EMAIL) || '';
-    const avatarUrl = localStorage.getItem(AVATAR_URL) || sessionStorage.getItem(AVATAR_URL) || '';
     const isLogged = localStorage.getItem(IS_LOGGED) || sessionStorage.getItem(IS_LOGGED) || '';
 
-
     useEffect(() => {
+        const username = localStorage.getItem(USERNAME) || sessionStorage.getItem(USERNAME) || '';
+        const email = localStorage.getItem(EMAIL) || sessionStorage.getItem(EMAIL) || '';
+        const avatarUrl = localStorage.getItem(AVATAR_URL) || sessionStorage.getItem(AVATAR_URL) || '';
         if (username && email && avatarUrl) {
             userContext.changeUserData({ username, email, avatarUrl, isLogged })
         }
     }, [])
 
     useEffect(async () => {
-        if (username && email && avatarUrl) {
+        if (isLogged) {
             const response = await getAllBookInCartApi();
-            userContext.changeCart({ cartQuantity: response?.data?.data?.length })
+            userContext.changeCart({ cartQuantity: response?.data?.data?.length, cart: response?.data?.data })
         }
-
     }, [])
+
+
+    // const { isLoading, data, error } = useQuery([`cart`], async () =>
+    //     await getAllBookInCartApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
+    // const cartQuantity1 = data?.data?.data?.length;
+
+
+    // useEffect(async () => {
+    //     // if (isLogged) {
+    //     userContext.changeCart({ cartQuantity: cartQuantity1 })
+    //     // }
+    // }, [cartQuantity1])
+
+    // console.log('cartQuantity1', userContext.cart.cartQuantity);
+
 
     return (
         <div className='header'>
@@ -48,10 +64,14 @@ const Header = () => {
                     <SeparatorColumn />
                     <Social />
                 </div>
+                {/* <div>{JSON.stringify(userContext.cart.cartQuantity)}</div> */}
+                {/* <div>{JSON.stringify(cartQuantity1)}</div> */}
                 {userContext.userData.username && userContext.userData.email && userContext.userData.avatarUrl ?
                     <div className='header-top-right'>
                         <ProfileMenu />
+                        {/* {isLoading ? <Skeleton height="100%" /> : */}
                         <Cart numberCart={userContext.cart.cartQuantity} />
+                        {/* } */}
                         <Noti />
                         <SearchInput />
                     </div> :

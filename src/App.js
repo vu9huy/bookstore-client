@@ -14,6 +14,7 @@ import { userDataContext } from './context/userDataContext';
 import VerifyEmail from './pages/user/verify-email/VerifyEmail';
 import Search from './pages/user/search/Search';
 import Profile from './pages/user/profile/Profile';
+import ListBookTheme from './pages/user/listbook-theme/ListBookTheme';
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 
 
@@ -44,6 +45,7 @@ function App() {
           <Route path='/register' element={isLogin ? <Navigate to='/' /> : <Register />} />
           <Route path='/register-response' element={<RegisterSuccess />} />
           <Route path='/verify-email/:email' element={<VerifyEmail />} />
+          <Route path='/list/:displayId' element={<ListBookTheme />} />
           <Route path='/search' element={<Search />} />
           <Route path='/users/:username' element={<Profile />} />
           <Route path='/book/:id' element={<Book />} />

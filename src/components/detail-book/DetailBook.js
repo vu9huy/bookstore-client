@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './DetailBook.scss';
 import { useQuery, useQueryClient, } from '@tanstack/react-query';
 import { getBookByIdApi, addBookInCartApi, getAllBookInCartApi } from "../../utils/api/CallApi";
@@ -56,7 +56,7 @@ const DetailBook = ({ bookId }) => {
         }
         try {
             const response = await addBookInCartApi(bookCart);
-            userContext.changeCart({ cartQuantity: userContext.cart.cartQuantity + 1 })
+            userContext.changeCart({ ...userContext.cart.cartQuantity, cartQuantity: userContext.cart.cartQuantity + 1 })
             setIsExistInCart(true);
         } catch (error) {
 
@@ -123,8 +123,6 @@ const DetailBook = ({ bookId }) => {
                         {isExistInCart || <div className="book-add-cart-wrapper" onClick={(e) => handleAddCart(e)}>
                             <Button content={'ADD TO CART'} icon={<i className='bx bxs-cart-add'></i>} />
                         </div>}
-
-
                     </div>
                 }
 

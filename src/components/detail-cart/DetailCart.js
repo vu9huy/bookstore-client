@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './DetailCart.scss';
 import { useQuery, useQueryClient, } from '@tanstack/react-query';
 import { getBookByIdApi } from '../../utils/api/CallApi';

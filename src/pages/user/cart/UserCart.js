@@ -80,7 +80,7 @@ const UserCart = () => {
             const result = await deleteBookInCartApi(bookCart);
             // console.log('result', result);
 
-            userContext.changeCart({ cartQuantity: userContext.cart.cartQuantity - 1 })
+            userContext.changeCart({ ...userContext.cart.cartQuantity, cartQuantity: userContext.cart.cartQuantity - 1 })
             setRerender(!rerender);
         } catch (error) {
             console.log(error);
