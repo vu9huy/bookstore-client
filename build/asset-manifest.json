@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3f76f549.css",
-    "main.js": "/static/js/main.ac887c9b.js",
+    "main.css": "/static/css/main.c58cc0d3.css",
+    "main.js": "/static/js/main.817a6a97.js",
     "static/js/787.2681f8ae.chunk.js": "/static/js/787.2681f8ae.chunk.js",
     "static/media/boxicons.svg": "/static/media/boxicons.f80cc694af79b88fde78.svg",
     "static/media/newmail.png": "/static/media/newmail.63247b9cc406abd0e93e.png",
@@ -23,12 +23,12 @@
     "static/media/Merienda-Regular.ttf": "/static/media/Merienda-Regular.53d1a3f1031a51480ad3.ttf",
     "static/media/Merienda-Bold.ttf": "/static/media/Merienda-Bold.45a68bbd1460a4b81261.ttf",
     "index.html": "/index.html",
-    "main.3f76f549.css.map": "/static/css/main.3f76f549.css.map",
-    "main.ac887c9b.js.map": "/static/js/main.ac887c9b.js.map",
+    "main.c58cc0d3.css.map": "/static/css/main.c58cc0d3.css.map",
+    "main.817a6a97.js.map": "/static/js/main.817a6a97.js.map",
     "787.2681f8ae.chunk.js.map": "/static/js/787.2681f8ae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f76f549.css",
-    "static/js/main.ac887c9b.js"
+    "static/css/main.c58cc0d3.css",
+    "static/js/main.817a6a97.js"
   ]
 }
