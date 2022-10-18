@@ -34,9 +34,9 @@ const Search = () => {
         author: searchKey
     }
 
-    const { isLoading: isLoading1, data: data1, error: error1 } = useQuery([`count-books-${searchKey}`], async () => await getCountOfBookByConditionApi(booksQueryObj), { refetchOnWindowFocus: false, cacheTime: 600000, staleTime: Infinity })
+    const { isLoading: isLoading1, data: data1, error: error1 } = useQuery([`count-books-${searchKey}`], async () => await getCountOfBookByConditionApi(booksQueryObj), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
 
-    const { isLoading: isLoading2, data: data2, error: error2 } = useQuery([`count-authors-${searchKey}`], async () => await getCountOfBookByConditionApi(authorsQueryObj), { refetchOnWindowFocus: false, cacheTime: 600000, staleTime: Infinity })
+    const { isLoading: isLoading2, data: data2, error: error2 } = useQuery([`count-authors-${searchKey}`], async () => await getCountOfBookByConditionApi(authorsQueryObj), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
 
     const booksTotal = data1?.data?.data;
 
@@ -61,7 +61,7 @@ const Search = () => {
                         </div>
                         <div className='search-body'>
                             <div className='search-body-top'>
-                                <Link to={`/search?q=ng&page=1`} className='search-body-top-item-wrapper'>
+                                <Link to={`/search?q=${searchKey}&page=1`} className='search-body-top-item-wrapper'>
                                     <div className='search-body-top-item' onClick={() => handleActive('books')}>
                                         <span>
                                             <i className={active == 'books' ? 'bx bx-book-open active' : 'bx bx-book-open'} ></i>
@@ -70,7 +70,7 @@ const Search = () => {
                                     </div>
                                     <div className={active == 'books' ? 'search-body-top-item-border active' : 'search-body-top-item-border'} ></div>
                                 </Link>
-                                <Link to={`/search?q=ng&page=1`} className='search-body-top-item-wrapper' onClick={() => handleActive('authors')}>
+                                <Link to={`/search?q=${searchKey}&page=1`} className='search-body-top-item-wrapper' onClick={() => handleActive('authors')}>
                                     <div className='search-body-top-item'>
                                         <span >
                                             <i className={active == 'authors' ? 'bx bx-user active' : 'bx bx-user'} ></i>

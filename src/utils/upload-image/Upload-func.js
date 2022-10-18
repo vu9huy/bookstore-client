@@ -5,8 +5,9 @@ const handleUploadImages = async (files) => {
     try {
         const getWithPromiseAll = async () => {
             let listUrlUploaded = await Promise.all(files.map(async (file) => {
-                const response = await uploadImagesApi(file);
+                const response = await uploadImagesApi(file.name);
                 const result = response.data?.data;
+                // console.log('result', result);
                 const presignedUrl = result.url;
                 // const imageUrl = result.urlImage;
                 const requestOptions = {
@@ -14,12 +15,14 @@ const handleUploadImages = async (files) => {
                     body: file
                 };
                 const upload = await fetch(presignedUrl, requestOptions);
-                const urlImageUploaded = upload.url;
+                const urlImageUploaded = result.urlImage;
+                // return urlImageUploaded;
                 return urlImageUploaded;
             }))
             return listUrlUploaded;
         }
         const allUrlResponse = await getWithPromiseAll();
+        return allUrlResponse;
         // console.log('allUrlResponse', allUrlResponse);
 
     } catch (error) {

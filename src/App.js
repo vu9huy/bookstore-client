@@ -45,7 +45,7 @@ function App() {
           <Route path='/register-response' element={<RegisterSuccess />} />
           <Route path='/verify-email/:email' element={<VerifyEmail />} />
           <Route path='/search' element={<Search />} />
-          <Route path='/user/:username' element={<Profile />} />
+          <Route path='/users/:username' element={<Profile />} />
           <Route path='/book/:id' element={<Book />} />
           <Route path='/cart' element={<UserCart />} />
           <Route path='*' element={<NotFound />} />

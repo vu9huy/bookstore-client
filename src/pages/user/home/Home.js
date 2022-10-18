@@ -10,11 +10,11 @@ import { getAllBannerApi, getAllDisplayApi } from '../../../utils/api/CallApi';
 
 const Home = () => {
 
-    const { isLoading, data, error } = useQuery([`banners`], async () => await getAllBannerApi(), { refetchOnWindowFocus: false, cacheTime: 5 * 60000, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery([`banners`], async () => await getAllBannerApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     const bannersList = data?.data?.data || [];
     // console.log('bannersList', bannersList);
 
-    const { isLoading: isLoading2, data: data2, error: error2 } = useQuery([`displays`], async () => await getAllDisplayApi(), { refetchOnWindowFocus: false, cacheTime: 5 * 60000, staleTime: Infinity })
+    const { isLoading: isLoading2, data: data2, error: error2 } = useQuery([`displays`], async () => await getAllDisplayApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     const displaysList = data2?.data?.data || [];
     // console.log('displaysList', displaysList);
 

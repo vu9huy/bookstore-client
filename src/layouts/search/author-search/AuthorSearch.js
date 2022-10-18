@@ -14,7 +14,7 @@ const AuthorSearch = ({ searchKey, skip, limit, page, queryObj }) => {
     // const queryObj = {
     //     author: searchKey
     // }
-    const { isLoading, data, error } = useQuery([`search-authors-${searchKey}-${page}`], async () => await getBookByConditionApi(queryObj, skip, limit), { refetchOnWindowFocus: false, cacheTime: 600000, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery([`search-authors-${searchKey}-${page}`], async () => await getBookByConditionApi(queryObj, skip, limit), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     const result = data?.data?.data
     const listBook = result || [];
     // console.log('result', result);

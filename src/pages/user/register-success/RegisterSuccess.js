@@ -13,7 +13,7 @@ const RegisterSuccess = () => {
     const userEmail = params.get('email');
     const jwt = params.get('token');
 
-    const { isLoading, data, error } = useQuery(['verify-email'], async () => await verifyEmail(jwt), { refetchOnWindowFocus: false, cacheTime: 10000, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery(['verify-email'], async () => await verifyEmail(jwt), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
 
     const isSuccess = data?.error_code === 0;
 

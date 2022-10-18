@@ -15,7 +15,7 @@ import { useQuery } from '@tanstack/react-query';
 const BannerSlice = () => {
     // const [banners, setBanners] = useState([])
 
-    const { isLoading, data, error } = useQuery([`banners`], async () => await getAllBannerApi(), { refetchOnWindowFocus: false, cacheTime: 600000, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery([`banners`], async () => await getAllBannerApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     const result = data?.data?.data;
     const banners = result || []
 

@@ -15,7 +15,7 @@ const Book = () => {
     }, [bookId])
 
     const [listUrlUploaded, setListUrlUpload] = useState([]);
-    console.log('listUrlUploaded', listUrlUploaded);
+    // console.log('listUrlUploaded', listUrlUploaded);
 
     const childFunc = useRef(null);
 
@@ -28,8 +28,8 @@ const Book = () => {
         <>
             <Header />
             <div className="body">
-                <Upload multiple={true} setListUrlUpload={setListUrlUpload} childFunc={childFunc} />
-                <button onClick={(e) => handleUpload(e)} type='submit' >Submit</button>
+                {/* <Upload multiple={true} setListUrlUpload={setListUrlUpload} childFunc={childFunc} /> */}
+                {/* <button onClick={(e) => handleUpload(e)} type='submit' >Submit</button> */}
                 {/* <div onClick={() => setIsEmtyFile()}> CLICK</div> */}
                 <DetailBook isCard={false} bookId={bookId} />
                 <RandomDisplay />

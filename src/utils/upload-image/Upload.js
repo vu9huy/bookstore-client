@@ -4,11 +4,11 @@ import './Upload.scss'
 import { uploadImagesApi } from '../api/CallApi';
 import handleUploadImages from './Upload-func';
 
-const baseUrl = process.env.REACT_APP_API_URL
+const baseUrl = process.env.REACT_APP_API_URL;
 
 const Upload = ({ multiple, setListUrlUpload, childFunc, setListUrlImage }) => {
-    const [files, setFiles] = useState([])
-    const [fileLinks, setFileLinks] = useState([])
+    const [files, setFiles] = useState([]);
+    const [fileLinks, setFileLinks] = useState([]);
 
     const handleChange = async (e) => {
         if (e.target.files) {
@@ -28,9 +28,8 @@ const Upload = ({ multiple, setListUrlUpload, childFunc, setListUrlImage }) => {
             setListUrlImage(fileLinkCreateArray);
 
             setFiles(fileSubmitArray);
-            setListUrlUpload(fileSubmitArray)
+            setListUrlUpload(fileSubmitArray);
         }
-
     }
 
     // const handleSubmit = async (e) => {

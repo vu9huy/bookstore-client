@@ -12,6 +12,7 @@ const USERNAME = process.env.REACT_APP_LOCALSTORAGE_USERNAME;
 const EMAIL = process.env.REACT_APP_LOCALSTORAGE_EMAIL;
 const AVATAR_URL = process.env.REACT_APP_LOCALSTORAGE_AVATAR_URL;
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
+const IS_REMEMBER = process.env.REACT_APP_LOCALSTORAGE_IS_REMEMBER;
 // const CART_QUANTITY = process.env.REACT_APP_LOCALSTORAGE_CART_QUANTITY;
 // const DEFAULT_AVATAR_URL = process.env.REACT_APP_DEFAULT_AVATAR_URL;
 const DEFAULT_AVATAR_URL = 'https://vu9huy-books.s3.ap-east-1.amazonaws.com/logos_2_4x.png';
@@ -39,7 +40,6 @@ const verifyEmail = async (jwt) => {
     const data = { jwt: jwt }
     try {
         const response = await axios.post(`${apiUrl}/user/verify`, data);
-
         return response.data;
     } catch (error) {
         if (error.response.data) return error.response.data
@@ -78,6 +78,7 @@ const loginUser = async (userForm, rememberPassword) => {
                 localStorage.setItem(AVATAR_URL, avatarUrl);
                 // localStorage.setItem(CART_QUANTITY, quantityCart);
                 localStorage.setItem(IS_LOGGED, true);
+                localStorage.setItem(IS_REMEMBER, true);
             } else {
                 // Delete user data in local storage if not remember me is false
                 localStorage.removeItem(USERNAME);
@@ -92,12 +93,36 @@ const loginUser = async (userForm, rememberPassword) => {
                 sessionStorage.setItem(AVATAR_URL, avatarUrl);
                 // sessionStorage.setItem(CART_QUANTITY, quantityCart);
                 sessionStorage.setItem(IS_LOGGED, true);
+                localStorage.setItem(IS_REMEMBER, false);
+
             }
 
         }
         return response
     } catch (error) {
         if (error?.response?.data) return error?.response?.data
+        else return { success: false, message: error.message }
+    }
+}
+
+// GET USER DATA
+const getUserDataApi = async () => {
+    try {
+        const response = await AxiosApiInstance.get(`${apiUrl}/user/getuser`);
+        return response;
+    } catch (error) {
+        if (error.response.data) return error.response.data
+        else return { success: false, message: error.message }
+    }
+}
+
+// EDIT USER DATA
+const editUserDataApi = async (userDataEdit) => {
+    try {
+        const response = await AxiosApiInstance.put(`${apiUrl}/user/edituser`, userDataEdit);
+        return response;
+    } catch (error) {
+        if (error.response.data) return error.response.data
         else return { success: false, message: error.message }
     }
 }
@@ -126,6 +151,9 @@ const logoutUser = async () => {
 
 // REFRESH TOKEN
 const refreshAccessToken = async () => {
+    const rememberPassword = localStorage.getItem(IS_REMEMBER) || '';
+    const cookieOption = rememberPassword ? { path: '/', maxAge: maxAge } : { path: '/' }
+
     try {
         const refreshToken = cookies.get(REFRESH_TOKEN)
 
@@ -135,8 +163,8 @@ const refreshAccessToken = async () => {
             }
         });
         if (response.data.error_code == 0) {
-            cookies.set(ACCESS_TOKEN, response.data.data.access_token)
-            cookies.set(REFRESH_TOKEN, response.data.data.refresh_token)
+            cookies.set(ACCESS_TOKEN, response.data.data.access_token, cookieOption)
+            cookies.set(REFRESH_TOKEN, response.data.data.refresh_token, cookieOption)
         }
         // console.log(response.data.data.access_token);
         return response.data.data.access_token
@@ -403,9 +431,9 @@ const deleteDisplayByIdApi = async (id) => {
 }
 
 // UPLOAD IMAGES
-const uploadImagesApi = async (file) => {
+const uploadImagesApi = async (name) => {
     try {
-        const response = await AxiosApiInstance.get(`${apiUrl}/upload-image`, { params: { name: file.name } });
+        const response = await AxiosApiInstance.get(`${apiUrl}/upload-image`, { params: { name: name } });
         return response
     } catch (error) {
         if (error.response.data) return error.response.data
@@ -421,6 +449,8 @@ export {
     loginUser,
     logoutUser,
     refreshAccessToken,
+    getUserDataApi,
+    editUserDataApi,
 
     createBookApi,
     getAllBookApi,

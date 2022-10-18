@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3f76f549.css",
+    "main.js": "/static/js/main.ac887c9b.js",
+    "static/js/787.2681f8ae.chunk.js": "/static/js/787.2681f8ae.chunk.js",
+    "static/media/boxicons.svg": "/static/media/boxicons.f80cc694af79b88fde78.svg",
+    "static/media/newmail.png": "/static/media/newmail.63247b9cc406abd0e93e.png",
+    "static/media/NotoSans-Bold.ttf": "/static/media/NotoSans-Bold.23e70cfbbe0783c66804.ttf",
+    "static/media/NotoSans-ExtraBold.ttf": "/static/media/NotoSans-ExtraBold.a4dc753f55a7591fa2d1.ttf",
+    "static/media/NotoSans-Regular.ttf": "/static/media/NotoSans-Regular.eae34fa8f1e0c4c6d797.ttf",
+    "static/media/NotoSans-Medium.ttf": "/static/media/NotoSans-Medium.a4c42b7a92bf0fdb8ec1.ttf",
+    "static/media/NotoSans-Light.ttf": "/static/media/NotoSans-Light.2cfb54d923b32fbd5525.ttf",
+    "static/media/boxicons.eot": "/static/media/boxicons.dfc882ec9689f820c7c9.eot",
+    "static/media/boxicons.woff": "/static/media/boxicons.1a7e2e2bf3a855e674d4.woff",
+    "static/media/boxicons.ttf": "/static/media/boxicons.22afc8ee5cfc540cddff.ttf",
+    "static/media/avatar.jpg": "/static/media/avatar.4fb15cb8b7bcb6574573.jpg",
+    "static/media/boxicons.woff2": "/static/media/boxicons.60f603cccbdff82a523c.woff2",
+    "static/media/logo.png": "/static/media/logo.50e564adbcd651412894.png",
+    "static/media/404.jpg": "/static/media/404.f61ea3fe6d3903638b15.jpg",
+    "static/media/failure.jpg": "/static/media/failure.57c67a2e8bb8398bfab1.jpg",
+    "static/media/success.png": "/static/media/success.08898828da08f3dfdbc2.png",
+    "static/media/TitanOne-Regular.ttf": "/static/media/TitanOne-Regular.465442311c8eb8cd5fe8.ttf",
+    "static/media/Merienda-Regular.ttf": "/static/media/Merienda-Regular.53d1a3f1031a51480ad3.ttf",
+    "static/media/Merienda-Bold.ttf": "/static/media/Merienda-Bold.45a68bbd1460a4b81261.ttf",
+    "index.html": "/index.html",
+    "main.3f76f549.css.map": "/static/css/main.3f76f549.css.map",
+    "main.ac887c9b.js.map": "/static/js/main.ac887c9b.js.map",
+    "787.2681f8ae.chunk.js.map": "/static/js/787.2681f8ae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f76f549.css",
+    "static/js/main.ac887c9b.js"
+  ]
+}

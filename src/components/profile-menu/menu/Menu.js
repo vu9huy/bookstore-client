@@ -33,7 +33,7 @@ const Menu = ({ avatarUrl, username, email, onClickOutside, avatarRef }) => {
     return (
         <div className='menu' ref={refMenu}>
             <div className='menu-display-profile'>
-                <Link to={`/${username}`} className='menu-display' >
+                <Link to={`/users/${username}`} className='menu-display' >
                     <div className='menu-display-avatar'>
                         <img src={avatarUrl} />
                     </div>

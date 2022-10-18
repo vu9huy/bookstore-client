@@ -11,7 +11,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 const DetailCart = ({ bookId }) => {
     let bookData = {};
-    const { isLoading, data, error } = useQuery([`book-${bookId}`], async () => await getBookByIdApi(bookId), { refetchOnWindowFocus: false, cacheTime: 30000 })
+    const { isLoading, data, error } = useQuery([`book-${bookId}`], async () => await getBookByIdApi(bookId), { refetchOnWindowFocus: false, cacheTime: Infinity })
     bookData = data?.data?.data ? data.data.data : {};
     return (
         <div className="detail-cart">

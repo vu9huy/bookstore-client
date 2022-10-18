@@ -23,7 +23,7 @@ import BookItem3 from '../../components/book-item-3/BookItem3';
 const BookSlide = ({ display }) => {
     const listBookIds = display.listBook;
     // console.log('listBookIds', listBookIds);
-    const { isLoading, data, error } = useQuery([`listbookids-${display.displayId}`], async () => await getBooksByListIdsIdApi(listBookIds), { refetchOnWindowFocus: false, cacheTime: 600000, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery([`listbookids-${display.displayId}`], async () => await getBooksByListIdsIdApi(listBookIds), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     // console.log('data', data);
     const result = data?.data?.data
     const listBook = result || [];

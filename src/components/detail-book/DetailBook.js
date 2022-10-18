@@ -16,10 +16,10 @@ import { userDataContext } from '../../context/userDataContext';
 const DetailBook = ({ bookId }) => {
     const [isLoadingCart, getIsLoadingCart] = useState(true)
     let bookData = {};
-    const { isLoading, data, error } = useQuery([`book-${bookId}`], async () => await getBookByIdApi(bookId), { refetchOnWindowFocus: false, cacheTime: 30000, staleTime: Infinity })
+    const { isLoading, data, error } = useQuery([`book-${bookId}`], async () => await getBookByIdApi(bookId), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     bookData = data?.data?.data ? data.data.data : {};
     // console.log(bookData);
-    const [isExistInCart, setIsExistInCart] = useState(false)
+    const [isExistInCart, setIsExistInCart] = useState(true)
     const bookCategories = bookData?.categories;
     const bookDescriptionRaw = bookData?.description;
     const bookDescriptionString = bookDescriptionRaw?.slice(11)
@@ -117,12 +117,13 @@ const DetailBook = ({ bookId }) => {
 
                 {isLoading && isLoadingCart ? <Skeleton width={180} height={40} /> :
                     <div className="book-add-cart" >
+                        {isExistInCart && <Link to='/cart' className="book-in-cart-wrapper" >
+                            <Button content={'IN CART'} icon={<i className='bx bx-shopping-bag'></i>} />
+                        </Link>}
                         {isExistInCart || <div className="book-add-cart-wrapper" onClick={(e) => handleAddCart(e)}>
                             <Button content={'ADD TO CART'} icon={<i className='bx bxs-cart-add'></i>} />
                         </div>}
-                        {isExistInCart && <Link to='/cart' className="book-in-cart-wrapper" onClick={(e) => handleAddCart(e)}>
-                            <Button content={'IN CART'} icon={<i className='bx bx-shopping-bag'></i>} />
-                        </Link>}
+
 
                     </div>
                 }
@@ -136,7 +137,6 @@ const DetailBook = ({ bookId }) => {
                             <Skeleton width='40%' height={26} count={1} />
                             <Skeleton width='100%' height={26} count={6} />
                             <Skeleton width='80%' height={26} count={1} />
-
                         </>
                         :
                         <div className="book-discription-text ">

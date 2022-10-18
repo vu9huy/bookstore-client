@@ -45,16 +45,16 @@ const UserCart = () => {
 
         const allBookResponse = await getWithPromiseAll();
         // console.log(allBookResponse);
-        const listPriceBook = allBookResponse.map(response => response.data?.data?.price)
+        const listPriceBook = allBookResponse?.map(response => response.data?.data?.price)
         setListPrice(listPriceBook)
-        const listSalePriceBook = allBookResponse.map(response => Math.round(response.data?.data?.price * 85 / 100 * 100) / 100)
+        const listSalePriceBook = allBookResponse?.map(response => Math.round(response.data?.data?.price * 85 / 100 * 100) / 100)
         setListSalePrice(listSalePriceBook)
         setIsLoading(false);
 
     }, [rerender])
 
     useEffect(async () => {
-        const totalPriceRaw = quantity.reduce((previousValue, currentValue, index) => (previousValue + currentValue * listSalePrice[index]), 0);
+        const totalPriceRaw = quantity?.reduce((previousValue, currentValue, index) => (previousValue + currentValue * listSalePrice[index]), 0);
         const totalPrice = Math.round(totalPriceRaw * 100) / 100;
         setTotal(totalPrice);
         // console.log('totalPrice', totalPrice);
@@ -166,7 +166,7 @@ const UserCart = () => {
                                         <th className="user-cart-head-remove"></th>
                                     </tr>
                                 </thead>
-                                {listCart.length === 0 && <tbody><div className="emty-cart">* Emty cart</div></tbody>}
+                                {listCart?.length === 0 && <tbody><div className="emty-cart">* Emty cart</div></tbody>}
                                 <tbody>
                                     {listCart?.map((book, index) => {
                                         return (
