@@ -1,0 +1,64 @@
+@import '../../../scss/variable';
+
+.coming-soon {
+    background-image: url('../../../assets/images/coming soon.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+    .coming-soon-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 60px;
+        justify-content: center;
+        align-items: center;
+
+        .coming-soon-text {
+            font-size: 32px;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+
+        .coming-soon-button-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+
+            .button {
+                font-size: 24;
+                font-weight: 600;
+            }
+
+            // .notfound-button {
+            //     background-color: $primary-color;
+            //     border-width: 1px;
+            //     font-size: 20px;
+            //     width: fit-content;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     padding: 8px 24px;
+            //     border-radius: 1000px;
+            //     background-color: #fff;
+            //     cursor: pointer;
+            // }
+
+            // .notfound-button:hover {
+            //     background-color: #ccc;
+            //     box-shadow: 1px 7px 13px 0px rgb(67 0 17 / 13%);
+            //     transform: scale(1.02);
+            // }
+        }
+
+
+    }
+}

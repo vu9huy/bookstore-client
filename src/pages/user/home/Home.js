@@ -7,6 +7,7 @@ import Footer from '../../../layouts/footer/Footer';
 import Banner from '../../../components/banner/Banner';
 import { useQuery, } from '@tanstack/react-query';
 import { getAllBannerApi, getAllDisplayApi } from '../../../utils/api/CallApi';
+import { useEffect } from 'react';
 
 const Home = () => {
 

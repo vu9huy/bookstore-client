@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Nav.scss';
 
@@ -101,8 +102,30 @@ const Nav = () => {
             type: 'none'
         }
     ]
+
+    // const [position, setPosition] = useState(window.pageYOffset)
+    // const [visible, setVisible] = useState(true)
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         let moving = window.pageYOffset
+
+    //         setVisible(position > moving);
+    //         setPosition(moving)
+    //     };
+    //     window.addEventListener("scroll", handleScroll);
+    //     return (() => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     })
+    // })
+
+    // const cls = visible ? "visible" : "hidden";
+
+
     return (
-        <div className='nav'>
+        <div
+            className={`nav`}
+        //  className={`nav ${cls}`}
+        >
             {navArr.map(navItem => {
                 return (
                     <div key={navItem.alias} className='nav-item-wrapper'>

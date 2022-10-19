@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c58cc0d3.css",
-    "main.js": "/static/js/main.817a6a97.js",
+    "main.css": "/static/css/main.7af80814.css",
+    "main.js": "/static/js/main.26a09d16.js",
     "static/js/787.2681f8ae.chunk.js": "/static/js/787.2681f8ae.chunk.js",
     "static/media/boxicons.svg": "/static/media/boxicons.f80cc694af79b88fde78.svg",
     "static/media/newmail.png": "/static/media/newmail.63247b9cc406abd0e93e.png",
@@ -14,6 +14,7 @@
     "static/media/boxicons.woff": "/static/media/boxicons.1a7e2e2bf3a855e674d4.woff",
     "static/media/boxicons.ttf": "/static/media/boxicons.22afc8ee5cfc540cddff.ttf",
     "static/media/avatar.jpg": "/static/media/avatar.4fb15cb8b7bcb6574573.jpg",
+    "static/media/coming soon.png": "/static/media/coming soon.70a3e0fa360ac02f22f9.png",
     "static/media/boxicons.woff2": "/static/media/boxicons.60f603cccbdff82a523c.woff2",
     "static/media/logo.png": "/static/media/logo.50e564adbcd651412894.png",
     "static/media/404.jpg": "/static/media/404.f61ea3fe6d3903638b15.jpg",
@@ -23,12 +24,12 @@
     "static/media/Merienda-Regular.ttf": "/static/media/Merienda-Regular.53d1a3f1031a51480ad3.ttf",
     "static/media/Merienda-Bold.ttf": "/static/media/Merienda-Bold.45a68bbd1460a4b81261.ttf",
     "index.html": "/index.html",
-    "main.c58cc0d3.css.map": "/static/css/main.c58cc0d3.css.map",
-    "main.817a6a97.js.map": "/static/js/main.817a6a97.js.map",
+    "main.7af80814.css.map": "/static/css/main.7af80814.css.map",
+    "main.26a09d16.js.map": "/static/js/main.26a09d16.js.map",
     "787.2681f8ae.chunk.js.map": "/static/js/787.2681f8ae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c58cc0d3.css",
-    "static/js/main.817a6a97.js"
+    "static/css/main.7af80814.css",
+    "static/js/main.26a09d16.js"
   ]
 }

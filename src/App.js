@@ -15,10 +15,12 @@ import VerifyEmail from './pages/user/verify-email/VerifyEmail';
 import Search from './pages/user/search/Search';
 import Profile from './pages/user/profile/Profile';
 import ListBookTheme from './pages/user/listbook-theme/ListBookTheme';
+import ComingSoon from './pages/user/coming-soon/ComingSoon';
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 
 
 function App() {
+
   const [isLogin, setIsLogin] = useState(false);
   const userContext = useContext(userDataContext);
   const userData = userContext.userData;
@@ -36,6 +38,7 @@ function App() {
   }, [isLogged])
 
 
+
   return (
     <>
       <BrowserRouter>
@@ -50,6 +53,8 @@ function App() {
           <Route path='/users/:username' element={<Profile />} />
           <Route path='/book/:id' element={<Book />} />
           <Route path='/cart' element={<UserCart />} />
+          <Route path='/setting' element={<ComingSoon />} />
+          <Route path='/:category' element={<ComingSoon />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

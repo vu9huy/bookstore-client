@@ -13,7 +13,6 @@ const Book = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [bookId])
-
     const [listUrlUploaded, setListUrlUpload] = useState([]);
     // console.log('listUrlUploaded', listUrlUploaded);
 

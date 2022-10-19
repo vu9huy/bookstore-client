@@ -55,9 +55,29 @@ const Header = ({ reRender }) => {
 
     // console.log('cartQuantity1', userContext.cart.cartQuantity);
 
+    const [position, setPosition] = useState(window.pageYOffset)
+    const [visible, setVisible] = useState(true)
+    useEffect(() => {
+        const handleScroll = () => {
+            let moving = window.pageYOffset
+
+            setVisible(position > moving);
+            setPosition(moving)
+        };
+        window.addEventListener("scroll", handleScroll);
+        return (() => {
+            window.removeEventListener("scroll", handleScroll);
+        })
+    })
+
+    const cls = visible ? "visible1" : "hidden1";
 
     return (
-        <div className='header'>
+        <div
+            // className={`header`}
+            className={`${cls} header`}
+        // style={{ transform: ' translate(0px, -76px)' }}
+        >
             <div className='header-top'>
                 <div className='header-top-left'>
                     <Logo />
@@ -81,7 +101,10 @@ const Header = ({ reRender }) => {
                     </div>
                 }
             </div>
-            <div className='header-bottom'>
+            <div
+                // className={`header-bottom ${cls}`}
+                className={`header-bottom`}
+            >
                 <Nav />
             </div>
         </div>
