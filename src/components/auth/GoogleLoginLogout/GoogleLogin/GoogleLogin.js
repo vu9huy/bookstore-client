@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
 import googleLogoImage from '../../../../assets/images/google-logo.webp';
 import './GoogleLogin.scss'
-const clientId = '934971953145-3cam4qdff5st75e60mi6nrpeoucsqse3.apps.googleusercontent.com'
 // import {  GoogleLogin } from '@react-oauth/google';
 import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 
+const clientId = process.env.REACT_APP_CLIENT_ID;
 const GoogleLoginBtn = ({ passChildData }) => {
 
     // const login = useGoogleLogin({
