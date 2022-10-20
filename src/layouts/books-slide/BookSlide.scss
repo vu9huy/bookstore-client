@@ -70,6 +70,13 @@
         color: $primary-color;
         font-weight: 800;
     }
+
+    .list-skeleton {
+        padding-top: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .book-table {

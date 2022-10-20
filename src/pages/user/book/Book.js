@@ -32,7 +32,6 @@ const Book = () => {
                 {/* <div onClick={() => setIsEmtyFile()}> CLICK</div> */}
                 <DetailBook isCard={false} bookId={bookId} />
                 <RandomDisplay />
-
             </div>
             <Footer />
         </>

@@ -14,6 +14,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 
 const UserCart = () => {
+
     const [listCart, setListCart] = useState([1, 1, 1, 1, 1]);
     const [listPrice, setListPrice] = useState([]);
     const [listSalePrice, setListSalePrice] = useState([]);
@@ -22,6 +23,10 @@ const UserCart = () => {
     const [total, setTotal] = useState(0);
     const userContext = useContext(userDataContext);
     const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     useEffect(async () => {
         setIsLoading(true);

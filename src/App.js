@@ -16,6 +16,7 @@ import Search from './pages/user/search/Search';
 import Profile from './pages/user/profile/Profile';
 import ListBookTheme from './pages/user/listbook-theme/ListBookTheme';
 import ComingSoon from './pages/user/coming-soon/ComingSoon';
+import FullPage from './pages/user/full-page/FullPage';
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route path='/cart' element={<UserCart />} />
           <Route path='/setting' element={<ComingSoon />} />
           <Route path='/:category' element={<ComingSoon />} />
+          {/* <Route path='/*' element={<FullPage />} /> */}
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

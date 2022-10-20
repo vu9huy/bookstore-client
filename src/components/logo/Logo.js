@@ -1,6 +1,6 @@
 import './Logo.scss';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.webp';
 
 function Logo({ }) {
     return (

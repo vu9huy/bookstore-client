@@ -17,10 +17,9 @@ import 'react-loading-skeleton/dist/skeleton.css';
 // Import React Query 
 import { useQuery, useQueryClient, } from '@tanstack/react-query';
 import Button from '../../element/button/Button';
-import BookItem3 from '../../components/book-item-3/BookItem3';
 
 
-const BookSlide = ({ display }) => {
+const BookSlide = ({ display, isLoading4 }) => {
     const listBookIds = display.listBook;
     // console.log('listBookIds', listBookIds);
     const { isLoading, data, error } = useQuery([`listbookids-${display.displayId}`], async () =>
@@ -45,26 +44,28 @@ const BookSlide = ({ display }) => {
             <div className='book-slide'>
                 <div className='book-slide-header'>
                     <Link to={`/list/${display.displayId}`} className='book-slide-header-name'>
-                        {isLoading ? <Skeleton width={300} height={32} /> : display.name}
+                        {isLoading4 ? <Skeleton width={300} height={32} /> : display.name}
                     </Link>
-                    {isLoading && (
+                    {/* {isLoading4 && (
                         <Skeleton
                             width={250} height={32}
                         />
-                    )}
+                    )} */}
 
-                    <Link to={`/list/${display.displayId}`} >
-                        <Button style={{ display: isLoading ? 'none' : undefined }}
-                            content={<span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>} ></Button>
-                    </Link>
+                    {isLoading4 ?
+                        <Skeleton width={200} height={40} /> :
+                        <Link to={`/list/${display.displayId}`} >
+                            <Button style={{ display: isLoading4 ? 'none' : undefined }}
+                                content={<span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>} ></Button>
+                        </Link>}
 
                 </div>
-                {isLoading && (
+                {isLoading4 && (
                     <Skeleton
                         height={300}
                     />
                 )}
-                <div className='book-slide-body' style={{ display: isLoading ? 'none' : undefined }}>
+                <div className='book-slide-body' style={{ display: isLoading4 ? 'none' : undefined }}>
                     <Swiper
                         grabCursor={true}
                         spaceBetween={10}
@@ -101,24 +102,29 @@ const BookSlide = ({ display }) => {
             <div className='book-table'>
                 <div className='book-table-header'>
                     <Link to={`/list/${display.displayId}`} className='book-table-header-name'>
-                        {isLoading ? <Skeleton width={300} height={32} /> : display.name}
+                        {isLoading4 ? <Skeleton width={300} height={32} /> : display.name}
                     </Link>
-                    {isLoading && (
+                    {/* {isLoading4 && (
                         <Skeleton
                             width={250} height={32}
                         />
-                    )}
-
-                    <Link to={`/list/${display.displayId}`} >
-                        <Button style={{ display: isLoading ? 'none' : undefined }}
+                    )} */}
+                    {isLoading4 ?
+                        <Skeleton width={200} height={40} /> :
+                        <Link to={`/list/${display.displayId}`} >
+                            <Button style={{ display: isLoading4 ? 'none' : undefined }}
+                                content={<span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>} ></Button>
+                        </Link>}
+                    {/* <Link to={`/list/${display.displayId}`} >
+                        <Button style={{ display: isLoading4 ? 'none' : undefined }}
                             content={<span>  {`VIEW LIST (${listBook.length} BOOKS)`}</span>} ></Button>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className='book-table-body'>
                     {listBookDisplay?.map((book, index) => {
                         return (
                             <div className='book-table-body-item' key={index}>
-                                <BookItem2 isLoading={isLoading} bookId={book.id} imageUrl={book.imageUrl} bookName={book.bookName} author={book.author} salePrice={Math.round(book.price * 85 / 100 * 100) / 100} defaultPrice={book.price} />
+                                <BookItem2 isLoading={isLoading4} bookId={book.id} imageUrl={book.imageUrl} bookName={book.bookName} author={book.author} salePrice={Math.round(book.price * 85 / 100 * 100) / 100} defaultPrice={book.price} />
                             </div>
                         )
                     })}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../assets/fonts/boxicons-2.1.1/css/boxicons.min.css'
 
 const Social = () => {
-    const facebookUrl = 'https://www.facebook.com/'
+    const facebookUrl = 'https://www.facebook.com/vu9huy/'
     const twitterUrl = 'https://www.twitter.com/'
     const instagramUrl = 'https://www.instagram.com/'
 

@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import './VerifyEmail.scss';
-import newMailImage from '../../../assets/images/newmail.png'
+import newMailImage from '../../../assets/images/newmail.webp'
 
 const VerifyEmail = () => {
     const params = useParams();

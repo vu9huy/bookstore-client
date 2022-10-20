@@ -4,10 +4,14 @@ import { getAllDisplayApi } from '../../utils/api/CallApi';
 import './RandomDisplay.scss';
 
 const RandomDisplay = () => {
-    const [display, setDisplay] = useState({})
+    const [display, setDisplay] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(async () => {
+        setIsLoading(true)
         const response = await getAllDisplayApi();
         const displayList = response.data?.data || [];
+        setIsLoading(false)
 
         function getRandom(list) {
             return list[Math.floor((Math.random() * list.length))];
@@ -20,7 +24,7 @@ const RandomDisplay = () => {
 
     return (
         <div className="random-display" >
-            <BookSlide display={display} key={display.displayId} />
+            <BookSlide display={display} key={display.displayId} isLoading4={isLoading} />
         </div>
     )
 }

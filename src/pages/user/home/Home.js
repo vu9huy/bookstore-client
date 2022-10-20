@@ -8,9 +8,13 @@ import Banner from '../../../components/banner/Banner';
 import { useQuery, } from '@tanstack/react-query';
 import { getAllBannerApi, getAllDisplayApi } from '../../../utils/api/CallApi';
 import { useEffect } from 'react';
+// Import Skeleton 
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import BannerSkeleton from '../../../components/banner/BannerSkeleton';
+import BookSlideSkeleton from '../../../layouts/books-slide/BookSlideSkeleton';
 
 const Home = () => {
-
     const { isLoading, data, error } = useQuery([`banners`], async () => await getAllBannerApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     const bannersList = data?.data?.data || [];
     // console.log('bannersList', bannersList);
@@ -19,18 +23,32 @@ const Home = () => {
     const displaysList = data2?.data?.data || [];
     // console.log('displaysList', displaysList);
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
             <Header />
             <div className='body'>
                 <div className='home'>
                     <div className='home-container'>
-                        <Banner bannersList={bannersList} />
-                        {displaysList.map(display => {
-                            return (
-                                <BookSlide display={display} key={display.displayId} />
-                            )
-                        })}
+                        {isLoading ?
+                            <BannerSkeleton /> :
+                            <Banner bannersList={bannersList} isLoading={isLoading} />}
+
+                        {isLoading2 ?
+                            <BookSlideSkeleton /> :
+                            <>
+                                {
+                                    displaysList.map(display => {
+                                        return (
+                                            <BookSlide display={display} key={display.displayId} isLoading4={isLoading2} />
+                                        )
+                                    })
+                                }
+                            </>
+                        }
                     </div>
                 </div>
             </div>

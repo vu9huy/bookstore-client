@@ -115,7 +115,7 @@ const DetailBook = ({ bookId }) => {
                         {/* <NotAvailable /> */}
                     </div>}
 
-                {isLoading && isLoadingCart ? <Skeleton width={180} height={40} /> :
+                {isLoading ? <Skeleton width={180} height={40} /> :
                     <div className="book-add-cart" >
                         {isExistInCart && <Link to='/cart' className="book-in-cart-wrapper" >
                             <Button content={'IN CART'} icon={<i className='bx bx-shopping-bag'></i>} />

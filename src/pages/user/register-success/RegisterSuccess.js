@@ -1,6 +1,6 @@
 import './RegisterSuccess.scss';
-import registerSuccessImage from '../../../assets/images/success.png';
-import registerFailureImage from '../../../assets/images/failure.jpg';
+import registerSuccessImage from '../../../assets/images/success.webp';
+import registerFailureImage from '../../../assets/images/failure.webp';
 import { Link } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { verifyEmail } from '../../../utils/api/CallApi';

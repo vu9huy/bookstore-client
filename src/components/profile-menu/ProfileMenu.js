@@ -1,6 +1,5 @@
 
 import './ProfileMenu.scss';
-import avatar from '../../assets/images/avatar.jpg'
 import Menu from './menu/Menu';
 import { useEffect, useRef, useState, useContext } from 'react';
 import { userDataContext } from '../../context/userDataContext';

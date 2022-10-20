@@ -7,17 +7,22 @@ import reportWebVitals from './reportWebVitals';
 import { UserDataProvider } from './context/userDataContext';
 // Import React Query 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+
+const clientId = '934971953145-3cam4qdff5st75e60mi6nrpeoucsqse3.apps.googleusercontent.com'
 
 const queryClient = new QueryClient()
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserDataProvider>
-      <QueryClientProvider client={queryClient}>
-        <App />
-      </QueryClientProvider>
-    </UserDataProvider>
+    <GoogleOAuthProvider clientId={clientId}>
+      <UserDataProvider>
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+      </UserDataProvider>
+    </GoogleOAuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

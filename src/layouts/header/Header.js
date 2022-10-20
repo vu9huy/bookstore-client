@@ -35,25 +35,14 @@ const Header = ({ reRender }) => {
     }, [])
 
     useEffect(async () => {
+        // console.log(isLogged);
         if (isLogged) {
             const response = await getAllBookInCartApi();
             userContext.changeCart({ cartQuantity: response?.data?.data?.length, cart: response?.data?.data })
         }
-    }, [])
+    }, [isLogged])
 
 
-    // const { isLoading, data, error } = useQuery([`cart`], async () =>
-    //     await getAllBookInCartApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
-    // const cartQuantity1 = data?.data?.data?.length;
-
-
-    // useEffect(async () => {
-    //     // if (isLogged) {
-    //     userContext.changeCart({ cartQuantity: cartQuantity1 })
-    //     // }
-    // }, [cartQuantity1])
-
-    // console.log('cartQuantity1', userContext.cart.cartQuantity);
 
     const [position, setPosition] = useState(window.pageYOffset)
     const [visible, setVisible] = useState(true)
@@ -85,7 +74,6 @@ const Header = ({ reRender }) => {
                     <Social />
                 </div>
                 {/* <div>{JSON.stringify(userContext.cart.cartQuantity)}</div> */}
-                {/* <div>{JSON.stringify(cartQuantity1)}</div> */}
                 {userContext.userData.username && userContext.userData.email && userContext.userData.avatarUrl ?
                     <div className='header-top-right'>
                         <ProfileMenu />

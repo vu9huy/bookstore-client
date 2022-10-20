@@ -9,7 +9,9 @@ import "swiper/css/navigation";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const Banner = ({ bannersList, isLoading }) => {
+const BannerSkeleton = () => {
+    const bannersList = [0]
+    const isLoading = true
     return (
         <div className='banner-wrapper'>
             <Swiper
@@ -77,4 +79,4 @@ const Banner = ({ bannersList, isLoading }) => {
 }
 
 
-export default Banner;
+export default BannerSkeleton;

@@ -1,6 +1,5 @@
 
 import { Link } from 'react-router-dom';
-import notfoundImage from '../../../assets/images/404.jpg'
 import './404.scss'
 import { useNavigate } from 'react-router-dom';
 
