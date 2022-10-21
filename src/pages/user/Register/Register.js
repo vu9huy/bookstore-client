@@ -10,12 +10,13 @@ import Footer from '../../../layouts/footer/Footer';
 function Register() {
 
     const [childData, setChildData] = useState("");
+
     return (
         <>
             <Header />
             <div className='body'>
                 <div className="register">
-                    <form method="POST" className="form register-form" id="form-1">
+                    <div className="form register-form" id="form-1">
                         <p className='login-title'>Register</p>
                         <FormInput />
                         <div className='or-login'>Already have an account?
@@ -26,7 +27,7 @@ function Register() {
                         </div>
                         <div className='google-login'>
                             <GoogleLoginBtn
-                                passChildData={setChildData}
+                            // passChildData={setChildData}
                             />
                             {/* <div>
                         <p>{childData.email}</p>
@@ -36,7 +37,7 @@ function Register() {
                             {/* <GoogleLogoutBtn /> */}
                         </div>
 
-                    </form>
+                    </div>
 
                 </div>
             </div>

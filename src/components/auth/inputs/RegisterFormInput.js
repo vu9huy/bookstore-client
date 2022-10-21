@@ -103,7 +103,6 @@ const FormInput = () => {
   }
 
   async function handleRegister(e) {
-    e.preventDefault()
     if (values.username === '' || values.email === '' || values.password === '' || values.confirmPassword === '') {
       return
     }
@@ -120,8 +119,6 @@ const FormInput = () => {
     } else if (response.error_code === 500) {
       setDuplicateData('Email')
     }
-
-
   }
 
   return (

@@ -27,7 +27,7 @@ const BannerSkeleton = () => {
             >
                 {bannersList.map(banner => {
                     return (
-                        <SwiperSlide key={banner._id}>
+                        <SwiperSlide key={banner}>
                             <div className="banner">
                                 <div className="banner-left flex-column">
                                     <p className='banner-title'>

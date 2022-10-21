@@ -9,20 +9,19 @@ import { UserDataProvider } from './context/userDataContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
-const clientId = '934971953145-3cam4qdff5st75e60mi6nrpeoucsqse3.apps.googleusercontent.com'
-
+const clientId = process.env.REACT_APP_CLIENT_ID;
 const queryClient = new QueryClient()
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={clientId}>
-      <UserDataProvider>
-        <QueryClientProvider client={queryClient}>
+    <UserDataProvider>
+      <QueryClientProvider client={queryClient}>
+        <GoogleOAuthProvider clientId={clientId}>
           <App />
-        </QueryClientProvider>
-      </UserDataProvider>
-    </GoogleOAuthProvider>
+        </GoogleOAuthProvider>
+      </QueryClientProvider>
+    </UserDataProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

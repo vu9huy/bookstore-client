@@ -38,6 +38,7 @@ const Header = ({ reRender }) => {
         // console.log(isLogged);
         if (isLogged) {
             const response = await getAllBookInCartApi();
+            // console.log('response', response);
             userContext.changeCart({ cartQuantity: response?.data?.data?.length, cart: response?.data?.data })
         }
     }, [isLogged])

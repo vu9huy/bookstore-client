@@ -1,62 +1,42 @@
 
-import React, { useEffect, useState } from 'react';
-import jwt_decode from 'jwt-decode';
+import React, { useContext } from 'react';
 import googleLogoImage from '../../../../assets/images/google-logo.webp';
 import './GoogleLogin.scss'
-// import {  GoogleLogin } from '@react-oauth/google';
-import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
+import { useGoogleLogin } from '@react-oauth/google';
+import { signInWithGoogle } from '../../../../utils/api/CallApi';
+const USERNAME = process.env.REACT_APP_LOCALSTORAGE_USERNAME;
+const EMAIL = process.env.REACT_APP_LOCALSTORAGE_EMAIL;
+const AVATAR_URL = process.env.REACT_APP_LOCALSTORAGE_AVATAR_URL;
+import { useNavigate } from "react-router-dom";
+import { userDataContext } from '../../../../context/userDataContext';
 
-const clientId = process.env.REACT_APP_CLIENT_ID;
 const GoogleLoginBtn = ({ passChildData }) => {
+    const navigate = useNavigate();
+    const userContext = useContext(userDataContext);
 
-    // const login = useGoogleLogin({
-    //     onSuccess: async respose => {
-    //         try {
-    //             const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
-    //                 headers: {
-    //                     "Authorization": `Bearer ${respose.access_token}`
-    //                 }
-    //             })
+    async function handleGoogleLoginSuccess(tokenResponse) {
+        const accessToken = tokenResponse.access_token;
+        // console.log('accessToken', accessToken);
+        const response = await signInWithGoogle(accessToken);
+        // console.log('response', response);
 
-    //             console.log(res.data)
-    //         } catch (err) {
-    //             console.log(err)
-    //         }
-    //     }
-    // });
-
-    async function success(credentialResponse) {
-        const userObjectRaw = jwt_decode(credentialResponse.credential);
-        const email = userObjectRaw.email;
-        const name = userObjectRaw.name;
-        const avatar = userObjectRaw.picture;
-        const userName = email.substr(0, email.indexOf('@gmail.com'))
-        // console.log(userObjectRaw);
-        const userObject = {
-            userName,
-            name,
-            email,
-            avatar
-        }
-        console.log(userObject);
+        const username = localStorage.getItem(USERNAME) || '';
+        const email = localStorage.getItem(EMAIL) || '';
+        const avatarUrl = localStorage.getItem(AVATAR_URL) || '';
+        // const userEmail = response.data?.data?.email;
+        userContext.changeUserData({ username, email, avatarUrl });
+        navigate('/');
+        console.log('login xong');
     }
+    const login = useGoogleLogin({ onSuccess: handleGoogleLoginSuccess });
 
 
     return (
         <div className='google-login-button-wrapper'>
-            {/* <button className='form-submit google-login-button' onClick={login}>
+            <button className='form-submit google-login-button' onClick={() => login()}>
                 <img src={googleLogoImage} />
                 <div className='google-auth'>Sign in with Google</div>
-            </button> */}
-            <GoogleLogin
-                size='large'
-                width='320'
-                onSuccess={(credentialResponse) => success(credentialResponse)}
-                onError={() => {
-                    console.log('Login Failed');
-                }}
-            />
+            </button>
         </div>
     );
 }

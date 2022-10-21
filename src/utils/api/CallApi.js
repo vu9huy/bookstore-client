@@ -65,7 +65,7 @@ const loginUser = async (userForm, rememberPassword) => {
             const decoded = jwt_decode(access_token);
             const { username, email, avatarUrl, quantityCart } = decoded;
             if (rememberPassword) {
-                // Delete user data in  session storage if not remember me is true
+                // Delete user data in session storage if not remember me is true
                 sessionStorage.removeItem(USERNAME);
                 sessionStorage.removeItem(EMAIL);
                 sessionStorage.removeItem(AVATAR_URL);
@@ -104,6 +104,45 @@ const loginUser = async (userForm, rememberPassword) => {
         else return { success: false, message: error.message }
     }
 }
+
+// LOGIN WITH GOOGLE
+const signInWithGoogle = async (accessTokenGoogle) => {
+    const data = { accessTokenGoogle };
+    const cookieOption = { path: '/', maxAge: maxAge };
+    try {
+        const response = await AxiosApiInstance.post(`${apiUrl}/user/login-google`, data);
+
+        if (response.data?.error_code == 0) {
+            cookies.set(ACCESS_TOKEN, response.data.data.access_token, cookieOption);
+            cookies.set(REFRESH_TOKEN, response.data.data.refresh_token, cookieOption);
+
+            const access_token = response.data.data.access_token;
+            const decoded = jwt_decode(access_token);
+            const { username, email, avatarUrl, quantityCart } = decoded;
+
+            // Delete user data in session storage if not remember me is true
+            sessionStorage.removeItem(USERNAME);
+            sessionStorage.removeItem(EMAIL);
+            sessionStorage.removeItem(AVATAR_URL);
+            sessionStorage.removeItem(IS_LOGGED);
+            // sessionStorage.removeItem(CART_QUANTITY);
+
+            // Save user data in session storage if remember me is true
+            localStorage.setItem(USERNAME, username);
+            localStorage.setItem(EMAIL, email);
+            localStorage.setItem(AVATAR_URL, avatarUrl);
+            // localStorage.setItem(CART_QUANTITY, quantityCart);
+            localStorage.setItem(IS_LOGGED, true);
+            localStorage.setItem(IS_REMEMBER, true);
+
+        }
+
+    } catch (error) {
+        if (error.response.data) return error.response.data
+        else return { success: false, message: error.message }
+    }
+}
+
 
 // GET USER DATA
 const getUserDataApi = async () => {
@@ -448,6 +487,7 @@ export {
     registerUser,
     verifyEmail,
     loginUser,
+    signInWithGoogle,
     logoutUser,
     refreshAccessToken,
     getUserDataApi,

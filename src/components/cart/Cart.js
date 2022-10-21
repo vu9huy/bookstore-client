@@ -7,13 +7,12 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 const Cart = ({ numberCart }) => {
 
-
     return (
         <Link to='/cart' className='cart'>
             <div className='cart-icon'>
                 <i className='bx bx-cart-alt'></i>
             </div>
-            {numberCart ? <div className='cart-number'>
+            {numberCart || numberCart == 0 ? <div className='cart-number'>
                 {numberCart < 99 ? numberCart : '99+'}
             </div> :
                 <div className='cart-number'></div>

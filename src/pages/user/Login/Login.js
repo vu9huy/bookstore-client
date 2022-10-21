@@ -51,7 +51,6 @@ const Login = () => {
         setValues({ ...values, [e.target.name]: e.target.value })
     }
     async function handleSubmit(e) {
-        e.preventDefault()
         if (values.username === '' || values.email === '' || values.password === '' || values.confirmPassword === '') {
             setIsEmty(true)
             setIsWrongUserData(false)
@@ -61,7 +60,6 @@ const Login = () => {
             setIsWrongUserData(false)
         }
         try {
-
             const response = await loginUser(values, isRememberPassword);
             const username = localStorage.getItem(USERNAME) || sessionStorage.getItem(USERNAME) || '';
             const email = localStorage.getItem(EMAIL) || sessionStorage.getItem(EMAIL) || '';
@@ -94,7 +92,7 @@ const Login = () => {
             <Header />
             <div className='body'>
                 <div className="register ">
-                    <form method="POST" className="form login-form" id="form-1">
+                    <div method="POST" className="form login-form" id="form-1">
                         <p className='login-title'>Login</p>
                         {inputs.map((input, index) => {
                             return (<FormInput
@@ -128,7 +126,7 @@ const Login = () => {
                         </div>
                         <div className='google-login'>
                             <GoogleLoginBtn
-                                passChildData={setChildData}
+                            // passChildData={setChildData}
                             />
                             {/* <div>
                         <p>{childData.email}</p>
@@ -138,7 +136,7 @@ const Login = () => {
                             {/* <GoogleLogoutBtn /> */}
                         </div>
 
-                    </form>
+                    </div>
 
                 </div>
             </div>

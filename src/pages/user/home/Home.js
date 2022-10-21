@@ -13,6 +13,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import BannerSkeleton from '../../../components/banner/BannerSkeleton';
 import BookSlideSkeleton from '../../../layouts/books-slide/BookSlideSkeleton';
+import GoogleLoginBtn from '../../../components/auth/GoogleLoginLogout/GoogleLogin/GoogleLogin';
 
 const Home = () => {
     const { isLoading, data, error } = useQuery([`banners`], async () => await getAllBannerApi(), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
@@ -52,6 +53,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* <GoogleLoginBtn /> */}
             <Footer />
         </>
 
