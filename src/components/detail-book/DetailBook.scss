@@ -9,6 +9,24 @@
     margin-top: 40px;
     margin-bottom: 40px;
     max-width: 1024px;
+    padding: 0 40px 0 0;
+
+    @include sm-tablet {
+        grid-template-columns: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 100%;
+        padding: 0 40px 0 40px;
+
+    }
+
+    @include mobile {
+        grid-template-columns: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 100%;
+        padding: 0;
+    }
 
     .book-text {
         text-align: justify;
@@ -19,10 +37,26 @@
         display: flex;
         justify-content: flex-end;
 
+        @include mobile {
+            justify-content: center;
+        }
+
+        @include sm-tablet {
+            justify-content: center;
+        }
+
         .book-image {
             display: flex;
             justify-content: flex-end;
             align-items: flex-start;
+
+            @include sm-tablet {
+                justify-content: center;
+            }
+
+            @include mobile {
+                justify-content: center;
+            }
 
             img {
                 width: 80%;
@@ -32,8 +66,6 @@
                 transition: transform 200ms ease-in, box-shadow 200ms ease-in;
                 border-radius: 5px;
             }
-
-
 
             img::after {
                 background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.0666667) 4%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(0, 0, 0, 0.0666667) 96%, rgba(0, 0, 0, 0.2) 100%);
@@ -52,14 +84,25 @@
     .book-right {
         gap: 16px;
 
+        @include mobile {
+            // gap: 12px;
+            padding: 0 16px;
+        }
+
         .book-name {
             font-size: 30px;
+
+            @include mobile {
+                font-size: 26px;
+            }
+
             // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         .book-author {
             .book-author-text {
                 color: #573ba3;
+
             }
         }
 
@@ -95,11 +138,13 @@
                 .book-item-2-price-sale {
                     font-weight: 700;
                     color: $primary-color;
+
                 }
 
                 .book-item-2-price-default {
                     font-weight: 700;
                     text-decoration: line-through;
+
                 }
             }
         }
@@ -137,14 +182,29 @@
         .book-discription {
             .book-discription-title {
                 font-size: 24px;
+
+                @include mobile {
+                    font-size: 20px;
+                }
             }
 
+            .book-discription-text {
+                .book-text {
+                    @include mobile {
+                        font-size: 14px;
+                        padding: 4px 0;
+                    }
+                }
+            }
         }
 
         .book-detail {
-
             .book-detail-title {
                 font-size: 24px;
+
+                @include mobile {
+                    font-size: 20px;
+                }
             }
 
             .book-detail-items {
@@ -173,49 +233,22 @@
                         .book-item-2-price-sale {
                             font-weight: 700;
                             color: $primary-color;
+
+                            @include mobile {
+                                font-size: 14px;
+                            }
                         }
 
                         .book-item-2-price-default {
                             font-weight: 700;
                             text-decoration: line-through;
+
+                            @include mobile {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
-
-                // .book-detail-item {
-                //     display: flex;
-                //     flex-direction: row;
-                //     gap: 20px;
-
-                //     .book-detail-item-left {
-                //         display: flex;
-                //         flex-direction: row;
-                //         justify-content: flex-end;
-                //         align-items: flex-end;
-                //         font-size: 14px;
-                //         color: #808080;
-                //     }
-
-                //     .book-detail-item-right {
-                //         font-size: 14px;
-                //         color: #2c293b;
-
-                //         .book-price-group {
-                //             display: flex;
-                //             flex-direction: row;
-                //             gap: 10px;
-
-                //             .book-item-2-price-sale {
-                //                 font-weight: 700;
-                //             }
-
-                //             .book-item-2-price-default {
-                //                 color: $primary-color;
-                //                 text-decoration: line-through;
-                //             }
-                //         }
-                //     }
-                // }
             }
         }
 
@@ -225,6 +258,10 @@
             align-items: flex-start;
             gap: 10px;
             word-break: keep-all;
+
+            @include mobile {
+                gap: 0px;
+            }
 
             .book-categories-title {
                 font-size: 14px;
@@ -241,6 +278,12 @@
                 flex-direction: row;
                 justify-content: start;
                 align-items: center;
+
+                @include mobile {
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: start;
+                }
 
                 .book-categories-item {
                     padding-right: 3px;
@@ -266,14 +309,26 @@
         .book-about-author {
             .book-about-author-title {
                 font-size: 24px;
+
+                @include mobile {
+                    font-size: 20px;
+                }
             }
 
-            .book-about-author-text {}
+            .book-about-author-text {
+                @include mobile {
+                    font-size: 14px;
+                }
+            }
         }
 
         .book-about-reviews {
             .book-about-reviews-title {
                 font-size: 24px;
+
+                @include mobile {
+                    font-size: 20px;
+                }
             }
         }
     }

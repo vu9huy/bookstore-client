@@ -9,7 +9,15 @@
     padding: 0 20px 0 0;
 
     .logo-image {
-        width: 52px;
+        width: 54px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        @include mobile {
+            width: 40px;
+        }
 
         img {}
     }
@@ -17,6 +25,12 @@
     .logo-text {
         font-family: MeriendaB;
         font-size: 28px;
-        color: $primary-color
+        color: $primary-color;
+
+        @include mobile {
+            font-size: 20px;
+            // display: none;
+        }
+
     }
 }

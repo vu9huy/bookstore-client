@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from 'react';
-import '../Login/auth.css';
+import '../Login/auth.scss';
 import GoogleLoginBtn from '../../../components/auth/GoogleLoginLogout/GoogleLogin/GoogleLogin';
 import FormInput from '../../../components/auth/inputs/RegisterFormInput';
 import { Link } from 'react-router-dom';

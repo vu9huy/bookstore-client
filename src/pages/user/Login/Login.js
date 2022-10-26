@@ -1,5 +1,5 @@
 import react, { useContext, useEffect, useState } from 'react';
-import './auth.css';
+import './auth.scss';
 import GoogleLoginBtn from '../../../components/auth/GoogleLoginLogout/GoogleLogin/GoogleLogin';
 import FormInput from '../../../components/auth/inputs/LoginFormInput';
 import { Link } from 'react-router-dom';
@@ -92,7 +92,7 @@ const Login = () => {
             <Header />
             <div className='body'>
                 <div className="register ">
-                    <div method="POST" className="form login-form" id="form-1">
+                    <div className="form login-form" id="form-1">
                         <p className='login-title'>Login</p>
                         {inputs.map((input, index) => {
                             return (<FormInput

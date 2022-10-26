@@ -1,4 +1,6 @@
-.header {
+@import '../../scss/variable';
+
+.header-container {
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -8,57 +10,121 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 4px 0 0 0;
+    // max-width: 1196px;
+    padding: 10px 0 0 0;
     border-bottom: 1px solid rgba(226, 232, 240, 1);
     box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+
     // transition: all .25s linear;
-
-    .header-top {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+    .header {
+        // position: fixed;
+        // top: 0;
+        // z-index: 1000;
+        // background-color: #fff;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
         width: 100%;
-        padding: 8px 180px;
+        max-width: 1160px;
+        padding: 0 32px;
 
-        .header-top-left {
+        // border-bottom: 1px solid rgba(226, 232, 240, 1);
+        // box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+
+        @include sm-tablet {
+            padding: 0 20px;
+        }
+
+        @include mobile {
+            padding: 0 20px;
+        }
+
+        .header-top {
             display: flex;
             flex-direction: row;
-        }
-
-        .header-top-right {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 30px;
+            width: 100%;
+
+            @include sm-tablet {
+                padding: 0 0 1px 0;
+            }
+
+            // padding: 8px 180px;
+            @include mobile {
+                padding: 0 0 1px 0;
+            }
+
+            .header-top-left {
+                display: flex;
+                flex-direction: row;
+
+                .header-top-left-social {
+                    @include sm-tablet {
+                        display: none;
+                    }
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+
+            .header-top-right {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                @include sm-tablet {
+                    gap: 16px;
+                }
+
+                @include mobile {
+                    gap: 16px;
+                }
+
+                .header-top-right-search {
+
+                    @include sm-tablet {
+                        display: none;
+                    }
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                .header-top-right-search {
+                    @include sm-tablet {
+                        display: none;
+                    }
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+
+            .header-top-right.sign {
+                gap: 8px;
+            }
+
         }
 
-        .header-top-right.sign {
-            gap: 8px;
+        .header-bottom {
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+            // padding: 0px 180px;
         }
-    }
-
-    .header-bottom {
-        display: flex;
-        flex-direction: row;
-
-        width: 100%;
-        padding: 0px 180px;
-    }
-
-    .visible1 {
-        /* display: flex; */
-        // top: 0;
-        // transition: all 0.4s ease-out;
 
     }
 
-    .hidden1 {
-        /* display: none; */
-        // top: -30px;
-        // transition: all 0.4s ease-out;
 
-    }
 }
 
 .visible1 {
@@ -73,8 +139,15 @@
     /* display: none; */
     // top: -80px;
     transition: all 0.4s ease-out;
-    transform: translate(0px, -76px);
+    transform: translate(0px, -64px);
     transition-delay: 0.6s;
 
+    @include sm-tablet {
+        transform: translate(0px, -65px);
+    }
 
+    @include mobile {
+        transform: translate(0px, -50px);
+
+    }
 }

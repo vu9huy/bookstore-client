@@ -7,6 +7,14 @@
     align-items: center;
     width: 100%;
 
+    @include sm-tablet {
+        display: none;
+    }
+
+    @include mobile {
+        display: none;
+    }
+
     .nav-item-wrapper {
         position: relative;
         padding: 8px 0;
@@ -18,6 +26,7 @@
         .nav-item {
             text-transform: uppercase;
             font-size: 14px;
+            cursor: default;
         }
 
         .nav-item:hover {
@@ -44,7 +53,7 @@
             padding: 10px 20px;
 
             .category-item {
-                padding: 8px 0;
+                padding: 8px 40px 8px 0;
             }
 
             .category-item:hover {

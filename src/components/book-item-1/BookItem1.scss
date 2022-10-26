@@ -1,3 +1,5 @@
+@import '../../scss/variable';
+
 .book-item-1 {
     display: flex;
     justify-content: center;
@@ -9,15 +11,40 @@
     // height: 320px;
     border-radius: 5px;
 
+    @include tablet {
+        margin-top: 16px;
+    }
+
+    @include sm-tablet {
+        height: 220px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+    @include mobile {
+        height: 180px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
     img {
-        height: 320px;
-        min-width: 200px;
+        height: 300px;
+        min-width: 150px;
         width: 100%;
         background-color: #fff4;
         border-radius: 5px;
         transition: transform 200ms ease-in, box-shadow 200ms ease-in;
-        // object-fit: cover;
-        // max-width: none;
+
+        @include sm-tablet {
+            height: 220px;
+            min-width: 100px;
+        }
+
+        @include mobile {
+            height: 180px;
+            min-width: 100px;
+
+        }
     }
 
     img:hover {

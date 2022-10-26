@@ -1,0 +1,81 @@
+@import '../../../scss/variable';
+
+.mobile-nav-menu-display {
+
+
+    .mobile-nav-menu-header {}
+
+    .mobile-nav-menu-body {
+        .mobile-nav-menu-item {
+            border-top: 1px solid #eae9ed;
+
+            // font-size: 18px;
+            .mobile-nav-menu-url-wrapper {
+
+                .mobile-nav-menu-item-url {
+                    padding: 12px 24px 12px 24px;
+                    display: block;
+                }
+            }
+
+
+            .mobile-nav-menu-body-lv2 {
+                .mobile-nav-menu-display-lv2 {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0px 24px 0px 0px;
+
+                    .mobile-nav-menu-name-lv2 {
+                        margin: 14px 24px 14px 24px;
+
+                    }
+
+                    .mobile-nav-menu-icon-lv2 {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+                        i {
+                            font-size: 30px;
+                            line-height: 20px;
+                            color: $primary-color
+                        }
+                    }
+                }
+
+                .mobile-nav-menu-items-lv2 {
+                    display: none;
+
+                    .mobile-nav-menu-item-lv2 {
+                        border-top: 1px solid #eae9ed;
+                        padding: 5px 0px 5px 0px;
+
+                        .mobile-nav-menu-item-url-lv2 {
+                            padding: 5px 0px 5px 48px;
+                            display: block;
+                        }
+                    }
+                }
+
+                .fiction-active {
+                    display: block;
+                }
+
+                .non-fiction-active {
+                    display: block;
+                }
+
+            }
+        }
+
+        .mobile-nav-menu-item:hover .mobile-nav-menu-item-url {
+            color: $primary-color
+        }
+
+
+    }
+
+}

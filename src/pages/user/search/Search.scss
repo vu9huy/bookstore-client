@@ -6,10 +6,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 50vh;
+
+    @include mobile {
+        margin: 30px auto 30px;
+    }
 
     .search {
         // max-width: 768px;
-        max-width: 1024px;
+        max-width: 980px;
         width: 100%;
 
         .search-header {
@@ -18,11 +23,19 @@
             text-align: center;
             margin-bottom: 24px;
 
+            @include mobile {
+                font-size: 22px;
+            }
+
             .search-title-key {
                 font-size: 26px;
                 font-weight: 700;
                 font-style: italic;
                 color: $primary-color;
+
+                @include mobile {
+                    font-size: 23px;
+                }
             }
         }
 
@@ -32,12 +45,19 @@
             padding: 24px 36px 24px 36px;
             border-radius: 5px;
 
+            @include mobile {
+                padding: 12px 18px 12px 18px;
+            }
+
             .search-body-top {
                 display: flex;
                 justify-content: space-evenly;
                 padding-bottom: 4px;
                 border-bottom: 1px solid #e2e8f0;
 
+                @include mobile {
+                    padding-bottom: 3px;
+                }
 
                 .search-body-top-item-wrapper {
                     width: 100%;
@@ -57,11 +77,18 @@
                             font-size: 20px;
                             font-weight: 700;
 
+                            @include mobile {
+                                font-size: 18px;
+                            }
+
                             i {
                                 line-height: 1;
                                 font-size: 24px;
                                 font-weight: 700;
 
+                                @include mobile {
+                                    font-size: 20px;
+                                }
                             }
                         }
 

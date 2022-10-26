@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../../../utils/api/CallApi';
 import { userDataContext } from '../../../context/userDataContext';
 
-const Menu = ({ onClickOutside, avatarRef }) => {
+const Menu = ({ onClickOutside, avatarRef, isDisplayMenu }) => {
     const navigate = useNavigate();
     const refMenu = useRef(null);
 
@@ -31,7 +31,10 @@ const Menu = ({ onClickOutside, avatarRef }) => {
     }
 
     return (
-        <div className='menu' ref={refMenu}>
+        <div
+            className='menu'
+            //  className={isDisplayMenu ? 'menu active' : 'menu hidden'}
+            ref={refMenu}>
             <div className='menu-display-profile'>
                 <Link to={`/users/${userContext.userData.username}`} className='menu-display' >
                     <div className='menu-display-avatar'>

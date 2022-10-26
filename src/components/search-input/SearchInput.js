@@ -31,7 +31,7 @@ const SearchInput = () => {
     return (
         <div className='search-input'>
             <input onKeyDown={(e) => { handleSearchEnter(e) }} value={keyWord} onChange={e => setKeyWord(e.target.value)} placeholder='Search...' type='text'></input>
-            <div className='icon flex-row' onClick={(e) => handleSearchClick(e)}>
+            <div className='icon flex-row ' onClick={(e) => handleSearchClick(e)}>
                 <i className='bx bx-search-alt-2 flex-row'></i>
             </div>
         </div>

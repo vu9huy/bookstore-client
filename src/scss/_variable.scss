@@ -11,4 +11,48 @@ $icon-color: #969696;
 $mobile-width: 600px;
 $tablet-width: 1024px;
 
-$primary-font-family: NotoSans-Regular
+$primary-font-family: NotoSans-Regular;
+
+
+
+$mobile-width: 480px;
+$tablet-width: 768px;
+$sm-desktop-width: 960px;
+$desktop-width: 1024px;
+$lg-desktop-width: 1300px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin sm-tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width }) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$sm-desktop-width }) {
+        @content;
+    }
+}
+
+@mixin sm-desktop {
+    @media (min-width: #{$sm-desktop-width}) and (max-width: #{$desktop-width }) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$lg-desktop-width }) {
+        @content;
+    }
+}
+
+@mixin lg-desktop {
+    @media (min-width: #{$lg-desktop-width}) {
+        @content;
+    }
+}

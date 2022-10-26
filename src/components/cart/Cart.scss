@@ -3,11 +3,18 @@
 .cart {
     position: relative;
     cursor: pointer;
+    margin-top: 4px;
+    padding-top: 4px;
 
     .cart-icon {
         i {
             font-size: 26px;
             color: $icon-color;
+
+            @include mobile {
+                font-size: 20px;
+
+            }
         }
     }
 
@@ -19,12 +26,18 @@
         font-size: 12px;
         width: 20px;
         height: 20px;
-        left: 65%;
-        bottom: 65%;
+        left: 60%;
+        bottom: 60%;
         color: #fff;
         background-color: $primary-color;
         padding: 3px;
         line-height: 1;
         border-radius: 100%;
+
+        @include mobile {
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+        }
     }
 }

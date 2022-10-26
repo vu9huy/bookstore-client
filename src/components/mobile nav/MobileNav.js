@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './Nav.scss';
+import './MobileNav.scss';
+import '../../assets/fonts/boxicons-2.1.1/css/boxicons.min.css';
+import SearchInput from '../search-input/SearchInput';
+import Search from '../../pages/user/search/Search';
+import MenuNavDisplay from './menu-nav/MenuNavDisplay';
 
-const Nav = () => {
+const MobileNav = () => {
     const navArr = [
         {
             alias: 'post',
@@ -83,7 +87,7 @@ const Nav = () => {
             category: [
                 {
                     name: 'Coming Soon',
-                    url: ''
+                    url: 'coming-soon'
                 },
             ]
         },
@@ -103,55 +107,42 @@ const Nav = () => {
         }
     ]
 
-    // const [position, setPosition] = useState(window.pageYOffset)
-    // const [visible, setVisible] = useState(true)
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         let moving = window.pageYOffset
+    const [isDisplayNoti, setIsDisplayNoti] = useState(false);
+    const notiRef = useRef(null)
 
-    //         setVisible(position > moving);
-    //         setPosition(moving)
-    //     };
-    //     window.addEventListener("scroll", handleScroll);
-    //     return (() => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     })
-    // })
+    async function handelDisplayNoti() {
+        setIsDisplayNoti(!isDisplayNoti);
 
-    // const cls = visible ? "visible" : "hidden";
+    }
+
 
 
     return (
-        <div
-            className={`nav`}
-        //  className={`nav ${cls}`}
-        >
-            {navArr.map(navItem => {
-                return (
-                    <div key={navItem.alias} className='nav-item-wrapper'>
-                        {navItem.isHaveCategory ?
-                            <div className='nav-item'>{navItem.name}</div> :
-                            <NavLink to={`/${navItem.alias}`} className={({ isActive }) => (isActive ? 'nav-item  active' : 'nav-item')}>
-                                {/* <div className='nav-item-name'> */}
-                                {navItem.name}
-                                {/* </div> */}
-                            </NavLink>
-                        }
-                        {navItem.isHaveCategory && <div className='nav-item-category'>
-                            {navItem.category?.map((category, index) => {
-                                return (
-                                    <Link to={`/${category.url}`} className='category-item' key={index}>
-                                        {category.name}
-                                    </Link>
-                                )
-                            })}
-                        </div>}
+        <div className='mobile-nav'>
+            <div className='mobile-nav-menu'>
+                {/* <div className='mobile-nav-menu-icon'>
+                    <i className='bx bx-menu'></i>
+                </div>
+                <div className='mobile-nav-menu-items'>
+                    rfeddfjkkj
+                </div> */}
 
+                <div className='mobile-nav-menu-icon' ref={notiRef} onClick={() => handelDisplayNoti()} >
+                    <div className='mobile-nav-menu-icon-bot'>
+                        <i className='bx bx-menu'></i>
                     </div>
-                )
-            })}
+                </div>
+
+                <div className={isDisplayNoti ? 'mobile-nav-menu-wrapper active' : 'mobile-nav-menu-wrapper hidden'}>
+                    <MenuNavDisplay navArr={navArr} notiRef={notiRef} onClickOutside={() => { setIsDisplayNoti(false) }} />
+                </div>
+
+            </div>
+            <div className='mobile-nav-search'>
+                <SearchInput />
+            </div>
         </div>
     )
 }
 
-export default Nav;
+export default MobileNav;

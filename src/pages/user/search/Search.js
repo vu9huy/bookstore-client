@@ -38,12 +38,18 @@ const Search = () => {
 
     const { isLoading: isLoading2, data: data2, error: error2 } = useQuery([`count-authors-${searchKey}`], async () => await getCountOfBookByConditionApi(authorsQueryObj), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
 
+    console.log('data1', data1);
+    console.log('data2', data2);
+
+
     const booksTotal = data1?.data?.data;
 
     const authorsTotal = data2?.data?.data;
 
     const totalBooksPage = Math.ceil(Number(booksTotal) / 25)
     const totalAuthorsPage = Math.ceil(Number(authorsTotal) / 25)
+
+    console.log('totalBooksPage', totalBooksPage);
 
     function handleActive(Obj) {
         setActive(Obj)

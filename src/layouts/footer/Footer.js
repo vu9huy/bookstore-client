@@ -31,29 +31,21 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='footer-bottom-social'>
+                        {/* <div className='footer-bottom-social'>
                             <div className=''><Social /></div>
-                            {/* <div className='about-us-item'>
-                                <Link to='/' >Partner with us</Link>
-                            </div>
-                            <div className='about-us-item'>
-                                <Link to='/' >Jobs</Link>
-                            </div>
-                            <div className='about-us-item'>
-                                <Link to='/' >Cookie Statement</Link>
-                            </div>
-                            <div className='about-us'>
-                                <Link to='/' >Privacy Statement</Link>
-                            </div> */}
-                        </div>
+                        </div> */}
                     </div>
                     <div className='footer-bottom-right'>
-                        <div className='copy-right'>© Copyright 2022, Vu Hong Quan</div>
-                        {/* <div className='contact'></div> */}
-                        <div className='contact'>+84 xx xxx xxx</div>
-                        <div className='contact'>quan2704vu@gmail.com</div>
-                        <div className='contact'>fooxstore.book@gmail.com</div>
-
+                        <div className='footer-bottom-right-contact'>
+                            <div className='copy-right'>© Copyright 2022, Vu Hong Quan</div>
+                            {/* <div className='contact'></div> */}
+                            <div className='contact'>+84 xx xxx xxx</div>
+                            <div className='contact'>quan2704vu@gmail.com</div>
+                            <div className='contact'>fooxstore.book@gmail.com</div>
+                        </div>
+                        <div className='footer-bottom-right-social'>
+                            <Social />
+                        </div>
 
                     </div>
                 </div>

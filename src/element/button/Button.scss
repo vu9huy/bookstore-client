@@ -13,10 +13,18 @@
     cursor: pointer;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 
+    @include tablet {
+        padding: 6px 18px;
+
+    }
+
+    @include mobile {}
+
     i {
         color: #fff;
         padding-right: 3px;
         font-size: 24px;
+
     }
 
     span {

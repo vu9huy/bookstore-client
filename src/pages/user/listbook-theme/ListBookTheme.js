@@ -14,7 +14,7 @@ import BookItem3 from '../../../components/book-item-3/BookItem3';
 
 
 const ListBookTheme = () => {
-    const params = useParams()
+    const params = useParams();
     const displayId = params.displayId;
     // console.log('displayId', displayId);
 
@@ -39,7 +39,6 @@ const ListBookTheme = () => {
             <Header />
             <div className='body'>
                 <div className='list-books-theme-container'>
-
                     <div className='list-books-theme-wrapper'>
                         <div className='list-books-theme-title-wrapper'>
                             <div className='list-books-theme-title title'>{display?.name}</div>

@@ -19,6 +19,7 @@ const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 import { useQuery, } from '@tanstack/react-query';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import MobileNav from '../../components/mobile nav/MobileNav';
 
 const Header = ({ reRender }) => {
     const userContext = useContext(userDataContext);
@@ -64,39 +65,53 @@ const Header = ({ reRender }) => {
 
     return (
         <div
-            // className={`header`}
-            className={`${cls} header`}
-        // style={{ transform: ' translate(0px, -76px)' }}
+            // className='header-container'
+            className={`${cls} header-container`}
         >
-            <div className='header-top'>
-                <div className='header-top-left'>
-                    <Logo />
-                    <SeparatorColumn />
-                    <Social />
-                </div>
-                {/* <div>{JSON.stringify(userContext.cart.cartQuantity)}</div> */}
-                {userContext.userData.username && userContext.userData.email && userContext.userData.avatarUrl ?
-                    <div className='header-top-right'>
-                        <ProfileMenu />
-                        {/* {isLoading ? <Skeleton height="100%" /> : */}
-                        <Cart numberCart={userContext.cart.cartQuantity} />
-                        {/* } */}
-                        <Noti />
-                        <SearchInput />
-                    </div> :
-                    <div className='header-top-right sign'>
-                        <Sign />
-                        <SearchInput />
-                    </div>
-                }
-            </div>
             <div
-                // className={`header-bottom ${cls}`}
-                className={`header-bottom`}
+                className={`header`}
+            // style={{ transform: ' translate(0px, -76px)' }}
             >
-                <Nav />
+                <div className='header-top'>
+                    <div className='header-top-left'>
+                        <Logo />
+                        <SeparatorColumn />
+                        <div className='header-top-left-social'>
+                            <Social />
+                        </div>
+
+                    </div>
+                    {/* <div>{JSON.stringify(userContext.cart.cartQuantity)}</div> */}
+                    {userContext.userData.username && userContext.userData.email && userContext.userData.avatarUrl ?
+                        <div className='header-top-right'>
+                            <ProfileMenu />
+                            {/* {isLoading ? <Skeleton height="100%" /> : */}
+                            <Cart numberCart={userContext.cart.cartQuantity} />
+                            {/* } */}
+                            <Noti />
+                            <div className='header-top-right-search'>
+                                <SearchInput />
+                            </div>
+
+                        </div> :
+                        <div className='header-top-right sign'>
+                            <Sign />
+                            <div className='header-top-right-search'>
+                                <SearchInput />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div
+                    // className={`header-bottom ${cls}`}
+                    className={`header-bottom`}
+                >
+                    <Nav />
+                    <MobileNav />
+                </div>
             </div>
         </div>
+
     )
 }
 

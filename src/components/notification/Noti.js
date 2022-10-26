@@ -1,5 +1,3 @@
-
-
 import './Noti.scss';
 import { useRef, useState } from 'react';
 import NotiDisplay from './noti-display/NotiDisplay';

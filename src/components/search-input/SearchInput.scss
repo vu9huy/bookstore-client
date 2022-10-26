@@ -4,6 +4,11 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    border-radius: 8px;
+
+    // @include mobile {
+    //     display: none;
+    // }
 
     input {
         // padding: 8px 4px;
@@ -19,6 +24,14 @@
         cursor: text;
         caret-color: $primary-color;
         color: #000;
+
+        @include mobile {
+            width: 240px;
+            background-color: #fff;
+            box-shadow: 0px 0px 1px 1px $primary-color;
+            margin-top: 1px;
+            height: 33px;
+        }
     }
 
     input:focus {
@@ -26,6 +39,11 @@
         background-color: #fff;
         box-shadow: 0px 0px 1px 1px $primary-color;
 
+        @include mobile {
+            width: 240px;
+            box-shadow: 0px 0px 1px 1px $primary-color;
+
+        }
     }
 
     input:focus~div {
@@ -34,6 +52,10 @@
         border-bottom-left-radius: 0;
         box-shadow: 0px 0px 1px 1px $primary-color;
 
+        @include mobile {
+            padding: 9px 7px 6px 4px;
+            height: 36px;
+        }
     }
 
     input::placeholder {
@@ -53,9 +75,18 @@
         cursor: pointer;
         transition: all 0.5s ease;
 
+        @include mobile {
+            padding: 9px 7px 6px 6px;
+            height: 36px;
+        }
+
         i {
             font-size: 24px;
             color: #fff;
+
+            @include mobile {
+                font-size: 20px;
+            }
         }
     }
 }
@@ -66,6 +97,13 @@
         height: 39px;
         background-color: #fff;
         box-shadow: 0px 0px 1px 1px $primary-hover-color;
+
+        @include mobile {
+            width: 240px;
+            height: 33px;
+            box-shadow: 0px 0px 1px 1px $primary-hover-color;
+
+        }
     }
 
     .icon {
@@ -74,5 +112,11 @@
         border-bottom-left-radius: 0;
         box-shadow: 0px 0px 1px 1px $primary-color;
 
+        @include mobile {
+            height: 36px;
+            padding: 9px 7px 6px 6px;
+            box-shadow: 0px 0px 0px 0px;
+
+        }
     }
 }

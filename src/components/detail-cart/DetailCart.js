@@ -44,6 +44,16 @@ const DetailCart = ({ bookId }) => {
                         {isLoading ? <Skeleton width={130} height={20} /> : bookData.bookFormat}
                     </div>
                 </div>
+
+                <div className="book-price">
+                    {bookData.price && <div className='book-item-2-price-default'>
+                        {`$${bookData.price}`}
+                    </div>}
+                    <div className='book-item-2-price-sale'>
+                        {`$${Math.round(bookData.price * 85 / 100 * 100) / 100}`}
+                    </div>
+                </div>
+
                 <div className="book-available">
                     {isLoading ? <Skeleton width={160} height={30} /> : <Available />}
 

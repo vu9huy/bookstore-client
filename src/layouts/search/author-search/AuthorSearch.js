@@ -26,7 +26,7 @@ const AuthorSearch = ({ searchKey, skip, limit, page, queryObj }) => {
                 {listBook?.map((book, index) => {
                     return (
                         <div className='author-search-item' key={index}>
-                            <BookItem3 isAddButton={false} isLoading={isLoading} bookId={book.id} imageUrl={book.imageUrl} bookName={book.bookName} author={book.author} salePrice={Math.round(book.price * 85 / 100 * 100) / 100} defaultPrice={book.price} />
+                            <BookItem3 isAddButton={true} isLoading={isLoading} bookId={book.id} imageUrl={book.imageUrl} bookName={book.bookName} author={book.author} salePrice={Math.round(book.price * 85 / 100 * 100) / 100} defaultPrice={book.price} />
                         </div>
                     )
                 })}

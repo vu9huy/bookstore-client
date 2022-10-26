@@ -8,6 +8,14 @@
     gap: 16px;
     padding: 8px 20px;
 
+    // @include sm-tablet {
+    //     display: none;
+    // }
+
+    // @include mobile {
+    //     display: none;
+    // }
+
     .social-item {
         display: flex;
         flex-direction: row;

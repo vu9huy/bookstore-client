@@ -1,3 +1,6 @@
+@import '../../../scss/variable';
+
+
 .author-search-wrapper {
     .author-search-no-match {
         margin-top: 30px;
@@ -9,6 +12,10 @@
         column-gap: 12px;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-auto-flow: row;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
 
         .author-search-item {
             grid-template-columns: minmax(0, 1fr);

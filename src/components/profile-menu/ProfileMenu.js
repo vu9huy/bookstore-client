@@ -23,8 +23,11 @@ const ProfileMenu = () => {
                 <div className='profile-avatar-image' style={{ backgroundImage: "url(" + userContext.userData.avatarUrl + ")", }} />
             </div>
             {/* {!isDisplayMenu || */}
-            <div className={isDisplayMenu ? 'profile-menu-menu active' : 'profile-menu-menu hidden'}>
-                <Menu avatarRef={avatarRef} onClickOutside={() => { setIsDisplayMenu(false) }} />
+            <div className={isDisplayMenu ? 'profile-menu-menu active' : 'profile-menu-menu hidden'}
+            // <div className='profile-menu-menu active'
+            // style={isDisplayMenu ? { transform: 'scaleY(1)' } : {}}
+            >
+                <Menu avatarRef={avatarRef} isDisplayMenu={isDisplayMenu} onClickOutside={() => { setIsDisplayMenu(false) }} />
             </div>
             {/* } */}
         </div>
