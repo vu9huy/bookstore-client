@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f3ba028.css",
-    "main.js": "/static/js/main.96f520c2.js",
+    "main.css": "/static/css/main.4f02b31d.css",
+    "main.js": "/static/js/main.12815e66.js",
     "static/js/787.2681f8ae.chunk.js": "/static/js/787.2681f8ae.chunk.js",
     "static/media/boxicons.svg": "/static/media/boxicons.f80cc694af79b88fde78.svg",
     "static/media/NotoSans-Bold.ttf": "/static/media/NotoSans-Bold.23e70cfbbe0783c66804.ttf",
@@ -11,25 +11,26 @@
     "static/media/NotoSans-Light.ttf": "/static/media/NotoSans-Light.2cfb54d923b32fbd5525.ttf",
     "static/media/boxicons.eot": "/static/media/boxicons.dfc882ec9689f820c7c9.eot",
     "static/media/newmail.webp": "/static/media/newmail.20d2eb1b5fa0cdde2afa.webp",
+    "static/media/Pacifico-Regular.ttf": "/static/media/Pacifico-Regular.c0d735fc04154e03a691.ttf",
     "static/media/boxicons.woff": "/static/media/boxicons.1a7e2e2bf3a855e674d4.woff",
     "static/media/boxicons.ttf": "/static/media/boxicons.22afc8ee5cfc540cddff.ttf",
+    "static/media/404img.webp": "/static/media/404img.2c9cdc942d8d5b108693.webp",
     "static/media/boxicons.woff2": "/static/media/boxicons.60f603cccbdff82a523c.woff2",
     "static/media/coming-soon.webp": "/static/media/coming-soon.d48a6d3a0b22d248aa98.webp",
     "static/media/TitanOne-Regular.ttf": "/static/media/TitanOne-Regular.465442311c8eb8cd5fe8.ttf",
     "static/media/failure.webp": "/static/media/failure.2fb53688de97f3b464a5.webp",
     "static/media/logo.webp": "/static/media/logo.ff30c5073109174f25fb.webp",
     "static/media/Merienda-Regular.ttf": "/static/media/Merienda-Regular.53d1a3f1031a51480ad3.ttf",
-    "static/media/404.webp": "/static/media/404.f6f0f235e192032d919a.webp",
     "static/media/success.webp": "/static/media/success.2f66ff1e39aa9fd52dbb.webp",
     "static/media/Merienda-Bold.ttf": "/static/media/Merienda-Bold.45a68bbd1460a4b81261.ttf",
     "static/media/google-logo.webp": "/static/media/google-logo.fee5e85ac08f6f61a81f.webp",
     "index.html": "/index.html",
-    "main.7f3ba028.css.map": "/static/css/main.7f3ba028.css.map",
-    "main.96f520c2.js.map": "/static/js/main.96f520c2.js.map",
+    "main.4f02b31d.css.map": "/static/css/main.4f02b31d.css.map",
+    "main.12815e66.js.map": "/static/js/main.12815e66.js.map",
     "787.2681f8ae.chunk.js.map": "/static/js/787.2681f8ae.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f3ba028.css",
-    "static/js/main.96f520c2.js"
+    "static/css/main.4f02b31d.css",
+    "static/js/main.12815e66.js"
   ]
 }

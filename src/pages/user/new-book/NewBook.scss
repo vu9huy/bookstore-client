@@ -1,0 +1,100 @@
+@import '../../../scss/variable';
+
+
+.new-book-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .new-book-wrapper {
+        // padding: 0 60px;
+        max-width: 980px;
+        width: 100%;
+
+        .new-book-wrapper-top {
+            .new-book-header {
+                padding: 20px 0;
+
+                .new-book-header-left {
+                    .new-book-header-name {
+                        font-family: 'Pacifico-Regular', cursive;
+                        font-size: 50px;
+                        line-height: 50px;
+                        font-weight: 500;
+
+                        @include tablet {
+                            font-size: 32px;
+                            line-height: 32px;
+                        }
+
+                        @include sm-tablet {
+                            font-size: 32px;
+                            line-height: 32px;
+                        }
+
+                        // color: $primary-color;
+                        @include mobile {
+                            font-size: 28px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+
+                .new-book-header-right {}
+            }
+
+            .new-book-mid {
+                .new-book-mid-list {
+                    // .book-search-wrapper-category {
+
+                    //     .book-search-no-match {
+                    //         margin-top: 30px;
+                    //     }
+
+                    // .book-search {
+                    display: grid;
+                    column-gap: 12px;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    grid-auto-flow: row;
+                    justify-items: center;
+
+                    @include sm-desktop {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
+
+                    @include tablet {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
+
+                    @include sm-tablet {
+                        grid-template-columns: 1fr 1fr;
+                    }
+
+                    @include mobile {
+                        grid-template-columns: 1fr;
+                    }
+
+
+                    .book-search-item {
+                        grid-template-columns: minmax(0, 1fr);
+                        grid-template-rows: auto auto auto 1fr auto auto;
+                        width: fit-content;
+
+                        @include mobile {
+                            width: 100%;
+                        }
+
+                    }
+
+                    //         }
+                    //     }
+                }
+            }
+
+
+        }
+
+        .new-book-wrapper-bottom {}
+    }
+}

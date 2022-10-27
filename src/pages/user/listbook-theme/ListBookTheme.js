@@ -30,7 +30,7 @@ const ListBookTheme = () => {
         await getBooksByListIdsIdApi(listBookIds), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     // console.log('data2', data2);
     const result = data2?.data?.data;
-    const listBook = result || [];
+    const listBook = result || [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
     // console.log('listBook', listBook);
 
 

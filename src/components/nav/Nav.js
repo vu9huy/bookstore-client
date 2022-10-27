@@ -140,7 +140,7 @@ const Nav = () => {
                         {navItem.isHaveCategory && <div className='nav-item-category'>
                             {navItem.category?.map((category, index) => {
                                 return (
-                                    <Link to={`/${category.url}`} className='category-item' key={index}>
+                                    <Link to={`/books/${category.url}`} className='category-item' key={index}>
                                         {category.name}
                                     </Link>
                                 )

@@ -71,14 +71,20 @@ const BookItem3 = ({ isLoading, bookId, imageUrl, bookName, author, salePrice, d
                     </div>
                 </div>
             </div>
-            {!isAddButton || <div className="book-add-cart" >
-                {isInCart && <Link to='/cart' className="book-in-cart-wrapper" >
-                    <Button content={'IN CART'} icon={<i className='bx bx-shopping-bag'></i>} />
-                </Link>}
-                {isInCart || <div className="book-add-cart-wrapper" onClick={(e) => handleAddCart(e)}>
-                    <Button content={'ADD TO CART'} icon={<i className='bx bxs-cart-add'></i>} />
-                </div>}
-            </div>}
+            {
+                isLoading ?
+                    <Skeleton width={'100%'} height={40} /> :
+                    <div className=''>
+                        {!isAddButton || <div className="book-add-cart" >
+                            {isInCart && <Link to='/cart' className="book-in-cart-wrapper" >
+                                <Button content={'IN CART'} icon={<i className='bx bx-shopping-bag'></i>} />
+                            </Link>}
+                            {isInCart || <div className="book-add-cart-wrapper" onClick={(e) => handleAddCart(e)}>
+                                <Button content={'ADD TO CART'} icon={<i className='bx bxs-cart-add'></i>} />
+                            </div>}
+                        </div>}
+                    </div>
+            }
 
         </div>
     )

@@ -256,7 +256,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 10px;
+            gap: 2px;
             word-break: keep-all;
 
             @include mobile {
@@ -275,9 +275,9 @@
                 font-weight: 700;
                 // width: fit-content;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: start;
-                align-items: center;
+                align-items: start;
 
                 @include mobile {
                     flex-direction: column;

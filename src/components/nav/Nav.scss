@@ -26,7 +26,7 @@
         .nav-item {
             text-transform: uppercase;
             font-size: 14px;
-            cursor: default;
+            cursor: pointer;
         }
 
         .nav-item:hover {
@@ -39,7 +39,7 @@
             background-color: #fff;
             display: none;
             position: absolute;
-            top: 100%;
+            top: calc(100% + 2px);
             left: -400px;
             right: -400px;
             flex-direction: column;

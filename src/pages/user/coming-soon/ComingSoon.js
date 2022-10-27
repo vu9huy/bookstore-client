@@ -9,6 +9,7 @@ const ComingSoon = () => {
     return (
         <div className='coming-soon'>
             {/* <img src={notfoundImage} /> */}
+            <div className='coming-soon-background'></div>
             <div className='coming-soon-wrapper'>
                 <div className='coming-soon-text'>
                     {/* Page not found */}

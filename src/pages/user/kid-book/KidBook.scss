@@ -1,0 +1,93 @@
+@import '../../../scss/variable';
+
+
+.kid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .kid-wrapper {
+        padding: 0 30px;
+        max-width: 980px;
+        width: 100%;
+
+        .kid-wrapper-top {
+            .kid-header {
+                padding: 20px 0;
+
+                .kid-header-left {
+                    .kid-header-name {
+                        font-family: 'Pacifico-Regular', cursive;
+                        font-size: 50px;
+                        line-height: 50px;
+                        font-weight: 500;
+
+                        @include tablet {
+                            font-size: 32px;
+                            line-height: 32px;
+                        }
+
+                        @include sm-tablet {
+                            font-size: 32px;
+                            line-height: 32px;
+                        }
+
+                        // color: $primary-color;
+                        @include mobile {
+                            font-size: 28px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+
+                .kid-header-right {}
+            }
+
+            .kid-mid {
+                .kid-mid-list {
+                    // display: grid;
+                    // column-gap: 12px;
+                    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    // grid-auto-flow: row;
+                    // justify-items: center;
+
+                    // @include sm-desktop {
+                    //     grid-template-columns: 1fr 1fr 1fr 1fr;
+                    // }
+
+                    // @include tablet {
+                    //     grid-template-columns: 1fr 1fr 1fr 1fr;
+                    // }
+
+                    // @include sm-tablet {
+                    //     grid-template-columns: 1fr 1fr;
+                    // }
+
+                    // @include mobile {
+                    //     grid-template-columns: 1fr;
+                    // }
+
+
+                    .book-search-item {
+                        grid-template-columns: minmax(0, 1fr);
+                        grid-template-rows: auto auto auto 1fr auto auto;
+                        width: fit-content;
+
+                        @include mobile {
+                            width: 100%;
+                        }
+
+                    }
+
+                    //         }
+                    //     }
+                }
+            }
+
+
+        }
+
+        .kid-wrapper-bottom {}
+    }
+}

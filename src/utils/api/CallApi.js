@@ -299,6 +299,15 @@ const getCountOfBookByConditionApi = async (ObjQuery) => {
     }
 }
 
+const getNewBookApi = async (skip, limit) => {
+    try {
+        const response = await AxiosApiInstance.get(`${apiUrl}/books/newbooks?skip=${skip}&limit=${limit}`,);
+        return response;
+    } catch (error) {
+        if (error.response.data) return error.response.data
+        else return { success: false, message: error.message }
+    }
+}
 
 // UPDATE BOOK BY ID
 const updateBookByIdApi = async (id, book) => {
@@ -498,6 +507,7 @@ export {
     getBooksByListIdsIdApi,
     getBookByConditionApi,
     getCountOfBookByConditionApi,
+    getNewBookApi,
     getBookByIdApi,
     updateBookByIdApi,
     deleteBookByIdApi,

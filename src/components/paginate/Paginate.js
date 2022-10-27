@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Paginate = ({ totalPage, currentPage, searchKey }) => {
-    const url = `/search?q=${searchKey}&page=`
+const Paginate = ({ totalPage, currentPage, searchKey, category }) => {
+
+    const url = category ? `/books/${category}?page=` : `/search?q=${searchKey}&page=`
     const previousPage = currentPage > 1 ? (currentPage - 1) : 1
     const nextPage = currentPage < totalPage ? (currentPage + 1) : totalPage
     const pageArray = Array.apply(null, Array(totalPage || 0)).map(function (x, i) { return i + 1; })

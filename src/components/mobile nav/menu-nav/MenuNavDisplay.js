@@ -45,7 +45,7 @@ const MenuNavDisplay = ({ navArr, onClickOutside, notiRef }) => {
                         <div className='mobile-nav-menu-item' key={index}>
                             {!item.isHaveCategory ?
                                 <div className='mobile-nav-menu-url-wrapper'>
-                                    <Link to={`/${item.alias}`} className='mobile-nav-menu-item-url'>
+                                    <Link to={`/books/${item.alias}`} className='mobile-nav-menu-item-url'>
                                         {item.name}
                                     </Link>
                                 </div>

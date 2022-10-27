@@ -8,6 +8,7 @@ const NotFound = () => {
     return (
         <div className='notfound'>
             {/* <img src={notfoundImage} /> */}
+            <div className='notfound-background'></div>
             <div className='notfound-wrapper'>
                 <div className='notfound-text'>
                     Page not found

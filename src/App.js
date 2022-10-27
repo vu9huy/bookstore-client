@@ -17,6 +17,11 @@ import Profile from './pages/user/profile/Profile';
 import ListBookTheme from './pages/user/listbook-theme/ListBookTheme';
 import ComingSoon from './pages/user/coming-soon/ComingSoon';
 import FullPage from './pages/user/full-page/FullPage';
+import ListBookCategory from './pages/user/listbook-category/ListBookCategory';
+import NewBooks from './pages/user/new-book/NewBook';
+import BestSeller from './pages/user/best-seller/BestSeller';
+import KidBook from './pages/user/kid-book/KidBook';
+import Author from './pages/user/author/Author';
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 
 
@@ -54,6 +59,11 @@ function App() {
           <Route path='/users/:username' element={<Profile />} />
           <Route path='/book/:id' element={<Book />} />
           <Route path='/cart' element={<UserCart />} />
+          <Route path='/authors/:authorName' element={<Author />} />
+          <Route path='/kid' element={<KidBook />} />
+          <Route path='/new-book' element={<NewBooks />} />
+          <Route path='/best-seller' element={<BestSeller />} />
+          <Route path='/books/:category' element={<ListBookCategory />} />
           <Route path='/setting' element={<ComingSoon />} />
           <Route path='/:category' element={<ComingSoon />} />
           {/* <Route path='/*' element={<FullPage />} /> */}
