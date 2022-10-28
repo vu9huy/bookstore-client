@@ -45,7 +45,7 @@ const MenuNavDisplay = ({ navArr, onClickOutside, notiRef }) => {
                         <div className='mobile-nav-menu-item' key={index}>
                             {!item.isHaveCategory ?
                                 <div className='mobile-nav-menu-url-wrapper'>
-                                    <Link to={`/books/${item.alias}`} className='mobile-nav-menu-item-url'>
+                                    <Link to={`/${item.alias}`} className='mobile-nav-menu-item-url'>
                                         {item.name}
                                     </Link>
                                 </div>
@@ -61,7 +61,7 @@ const MenuNavDisplay = ({ navArr, onClickOutside, notiRef }) => {
                                         {item?.category?.map((itemlv2, index) => {
                                             return (
                                                 <div className='mobile-nav-menu-item-lv2' key={index} onClick={() => console.log('chạm vào')}>
-                                                    <Link to={`/${itemlv2.url}`} className='mobile-nav-menu-item-url-lv2'>
+                                                    <Link to={`/books/${itemlv2.url}`} className='mobile-nav-menu-item-url-lv2'>
                                                         {itemlv2.name}
                                                     </Link>
                                                 </div>

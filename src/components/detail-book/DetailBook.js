@@ -18,7 +18,7 @@ const DetailBook = ({ bookId }) => {
     let bookData = {};
     const { isLoading, data, error } = useQuery([`book-${bookId}`], async () => await getBookByIdApi(bookId), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     bookData = data?.data?.data ? data.data.data : {};
-    // console.log(bookData);
+    console.log(bookData);
     const [isExistInCart, setIsExistInCart] = useState(true)
     const bookCategories = bookData?.categories;
     const bookDescriptionRaw = bookData?.description;
@@ -236,6 +236,12 @@ const DetailBook = ({ bookId }) => {
                             </div>
                             <div className="book-detail-item-right">
                                 {bookData.bookFormat}
+                            </div>
+                            <div className="book-detail-item-left">
+                                EAN/UPC
+                            </div>
+                            <div className="book-detail-item-right">
+                                {bookData.EANUPC}
                             </div>
                             {/* </div> */}
                         </div>
