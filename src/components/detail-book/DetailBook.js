@@ -262,7 +262,7 @@ const DetailBook = ({ bookId }) => {
                                 return (
                                     <div className="book-categories-item" key={index}>
                                         <span>
-                                            <Link to={`/tags/${categorie}`}>
+                                            <Link to={`/bisac/${categorie}`}>
                                                 {categorie}
                                             </Link>
                                         </span>

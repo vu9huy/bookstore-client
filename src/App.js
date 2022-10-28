@@ -22,6 +22,7 @@ import NewBooks from './pages/user/new-book/NewBook';
 import BestSeller from './pages/user/best-seller/BestSeller';
 import KidBook from './pages/user/kid-book/KidBook';
 import Author from './pages/user/author/Author';
+import Bisac from './pages/user/bisac/Bisac';
 const IS_LOGGED = process.env.REACT_APP_LOCALSTORAGE_IS_LOGGED;
 
 
@@ -60,6 +61,7 @@ function App() {
           <Route path='/book/:id' element={<Book />} />
           <Route path='/cart' element={<UserCart />} />
           <Route path='/authors/:authorName' element={<Author />} />
+          <Route path='/bisac/:bisacName' element={<Bisac />} />
           <Route path='/kid' element={<KidBook />} />
           <Route path='/new-book' element={<NewBooks />} />
           <Route path='/best-seller' element={<BestSeller />} />

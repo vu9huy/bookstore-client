@@ -1,0 +1,100 @@
+@import '../../../scss/variable';
+
+
+.best-seller-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .best-seller-wrapper {
+        // padding: 0 60px;
+        max-width: 980px;
+        width: 100%;
+
+        .best-seller-wrapper-top {
+            .best-seller-header {
+                padding: 20px 0;
+
+                .best-seller-header-left {
+                    .best-seller-header-name {
+                        font-family: 'Pacifico-Regular', cursive;
+                        font-size: 50px;
+                        line-height: 50px;
+                        font-weight: 500;
+
+                        @include tablet {
+                            font-size: 32px;
+                            line-height: 32px;
+                        }
+
+                        @include sm-tablet {
+                            font-size: 32px;
+                            line-height: 32px;
+                        }
+
+                        // color: $primary-color;
+                        @include mobile {
+                            font-size: 28px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+
+                .best-seller-header-right {}
+            }
+
+            .best-seller-mid {
+                .best-seller-mid-list {
+                    // .book-search-wrapper-category {
+
+                    //     .book-search-no-match {
+                    //         margin-top: 30px;
+                    //     }
+
+                    // .book-search {
+                    display: grid;
+                    column-gap: 12px;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    grid-auto-flow: row;
+                    justify-items: center;
+
+                    @include sm-desktop {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
+
+                    @include tablet {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
+
+                    @include sm-tablet {
+                        grid-template-columns: 1fr 1fr;
+                    }
+
+                    @include mobile {
+                        grid-template-columns: 1fr;
+                    }
+
+
+                    .book-search-item {
+                        grid-template-columns: minmax(0, 1fr);
+                        grid-template-rows: auto auto auto 1fr auto auto;
+                        width: fit-content;
+
+                        @include mobile {
+                            width: 100%;
+                        }
+
+                    }
+
+                    //         }
+                    //     }
+                }
+            }
+
+
+        }
+
+        .best-seller-wrapper-bottom {}
+    }
+}
