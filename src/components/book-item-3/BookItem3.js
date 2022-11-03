@@ -6,9 +6,11 @@ import { useContext, useEffect, useState } from 'react';
 import { userDataContext } from '../../context/userDataContext';
 import Button from '../../element/button/Button';
 import { addBookInCartApi } from '../../utils/api/CallApi';
+import FlashMessage from '../../element/flash-mesagse/FlashMessage';
 
 const BookItem3 = ({ isLoading, bookId, imageUrl, bookName, author, salePrice, defaultPrice, isAddButton }) => {
     const [isInCart, setIsInCart] = useState(true);
+    const [isFlashMessageDisplay, setIsFlashMessageDisplay] = useState(false)
 
     const userContext = useContext(userDataContext);
 
@@ -27,6 +29,16 @@ const BookItem3 = ({ isLoading, bookId, imageUrl, bookName, author, salePrice, d
     }, [bookId])
 
     async function handleAddCart() {
+
+
+        if (!userContext.cart.cartQuantity) {
+            setIsFlashMessageDisplay(true);
+            setTimeout(() => {
+                setIsFlashMessageDisplay(false);
+            }, 3000);
+            return
+        }
+
         const bookCart = {
             bookId: bookId,
             quantity: 1
@@ -42,6 +54,7 @@ const BookItem3 = ({ isLoading, bookId, imageUrl, bookName, author, salePrice, d
 
     return (
         <div className='book-item-3'>
+            {isFlashMessageDisplay && <FlashMessage type={'error'} />}
             <div className='book-item-3-wrapper'>
                 <div className='book-item-3-top'>
                     <Link to={`/book/${bookId}`} className='book-item-3-image'>

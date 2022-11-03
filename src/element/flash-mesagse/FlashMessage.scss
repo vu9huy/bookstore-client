@@ -1,0 +1,21 @@
+@import '../../scss/variable';
+
+
+.flash-massage {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    background-color: $primary-color;
+    color: #fff;
+
+    .flash-massage-title {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .flash-massage-content {
+        color: #fff;
+    }
+}

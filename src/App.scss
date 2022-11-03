@@ -46,6 +46,12 @@ img {
     @include mobile {
         padding-top: 120px;
     }
+
+    .flash-massage {
+        position: fixed;
+        bottom: 30px;
+        right: 50px;
+    }
 }
 
 .title {

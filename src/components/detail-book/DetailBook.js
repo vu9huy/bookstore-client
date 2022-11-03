@@ -12,14 +12,17 @@ import NotAvailable from "../../element/not-available/NotAvailable";
 import Button from "../../element/button/Button";
 import PromoteBook from "../promote-book/PromoteBook";
 import { userDataContext } from '../../context/userDataContext';
+import FlashMessage from "../../element/flash-mesagse/FlashMessage";
 
 const DetailBook = ({ bookId }) => {
     const [isLoadingCart, getIsLoadingCart] = useState(true)
     let bookData = {};
     const { isLoading, data, error } = useQuery([`book-${bookId}`], async () => await getBookByIdApi(bookId), { refetchOnWindowFocus: false, cacheTime: Infinity, staleTime: Infinity })
     bookData = data?.data?.data ? data.data.data : {};
-    console.log(bookData);
-    const [isExistInCart, setIsExistInCart] = useState(true)
+    // console.log(bookData);
+    const [isExistInCart, setIsExistInCart] = useState(true);
+    const [isFlashMessageDisplay, setIsFlashMessageDisplay] = useState(false);
+
     const bookCategories = bookData?.categories;
     const bookDescriptionRaw = bookData?.description;
     const bookDescriptionString = bookDescriptionRaw?.slice(11)
@@ -27,6 +30,7 @@ const DetailBook = ({ bookId }) => {
     const bookReviewRaw = bookData.review;
     const bookReview = bookReviewRaw?.split('\n');
     // console.log(bookReview);
+
 
     const userContext = useContext(userDataContext);
 
@@ -50,6 +54,17 @@ const DetailBook = ({ bookId }) => {
     }, [])
 
     async function handleAddCart(e) {
+
+        // console.log('context', userContext.cart.cartQuantity);
+
+        if (!userContext.cart.cartQuantity) {
+            setIsFlashMessageDisplay(true);
+            setTimeout(() => {
+                setIsFlashMessageDisplay(false);
+            }, 3000);
+            return
+        }
+
         const bookCart = {
             bookId: bookId,
             quantity: 1
@@ -64,8 +79,8 @@ const DetailBook = ({ bookId }) => {
     }
 
     return (
-
         <div className="detail-book">
+            {isFlashMessageDisplay && <FlashMessage type={'error'} />}
             <div className="book-left">
                 <div className="book-image">
                     {isLoading && (
