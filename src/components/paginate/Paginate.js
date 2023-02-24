@@ -13,6 +13,7 @@ const Paginate = ({ totalPage, currentPage, searchKey, category }) => {
     return (
         <div className='paginate-wrapper'>
             {/* Total page >= 5 */}
+// sửa totalPage >= 5 thành totalPage > 5. Bên dưới có totalPage <= 5 rồi.
             {totalPage <= 1 || totalPage >= 5 && <div className="paginate" >
                 <div className='previous-page page-item'>
                     <Link to={`${url}${previousPage}`}>
